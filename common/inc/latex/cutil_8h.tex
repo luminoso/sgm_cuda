@@ -1,0 +1,1025 @@
+\hypertarget{cutil_8h}{
+\section{cutil.h File Reference}
+\label{cutil_8h}\index{cutil.h@{cutil.h}}
+}
+{\ttfamily \#include $<$stdio.h$>$}\par
+{\ttfamily \#include $<$stdlib.h$>$}\par
+\subsection*{Defines}
+\begin{DoxyCompactItemize}
+\item 
+\#define \hyperlink{cutil_8h_aa64d2caeae8ec39e61ae17b5ba1e7997}{DLL\_\-MAPPING}
+\item 
+\#define \hyperlink{cutil_8h_af609c3cbc0c12429a456efa504a507ac}{CUTIL\_\-API}
+\item 
+\#define \hyperlink{cutil_8h_ae479ab7f929fd0376bb5d01d1455480a}{CUT\_\-DEVICE\_\-SYNCHRONIZE}()~cudaThreadSynchronize();
+\item 
+\#define \hyperlink{cutil_8h_ab91fccf3a1ef878266549e0790038989}{CUT\_\-DEVICE\_\-RESET}()~cudaThreadExit();
+\item 
+\#define \hyperlink{cutil_8h_aeace20ec90b726fbce6a5be01520705c}{CUT\_\-BANK\_\-CHECKER}(array, index)~array\mbox{[}index\mbox{]}
+\item 
+\#define \hyperlink{cutil_8h_ab8093218c68bc2572946bbf8c8a2dc5e}{CU\_\-SAFE\_\-CALL\_\-NO\_\-SYNC}(call)
+\item 
+\#define \hyperlink{cutil_8h_af020685002673c5961838e74502b882b}{CU\_\-SAFE\_\-CALL}(call)~CU\_\-SAFE\_\-CALL\_\-NO\_\-SYNC(call);
+\item 
+\#define \hyperlink{cutil_8h_ac5176f55dfc2df742b2e0057be499b57}{CU\_\-SAFE\_\-CTX\_\-SYNC}()
+\item 
+\#define \hyperlink{cutil_8h_a024604466a0ecc1c84ca93c25332b3c2}{CUDA\_\-SAFE\_\-CALL\_\-NO\_\-SYNC}(call)
+\item 
+\#define \hyperlink{cutil_8h_a0bc2332eff86e645eae632d071929dc5}{CUDA\_\-SAFE\_\-CALL}(call)~CUDA\_\-SAFE\_\-CALL\_\-NO\_\-SYNC(call);                                            $\backslash$
+\item 
+\#define \hyperlink{cutil_8h_a5f49fae5fdd95c500f37a4db6a3ccc7a}{CUDA\_\-SAFE\_\-THREAD\_\-SYNC}()
+\item 
+\#define \hyperlink{cutil_8h_a90f4f2f56d0e4350a7f98c1bfd9f2367}{CUFFT\_\-SAFE\_\-CALL}(call)
+\item 
+\#define \hyperlink{cutil_8h_a3000a1b1c02dad1987b67dc70ad3baa9}{CUT\_\-SAFE\_\-CALL}(call)
+\item 
+\#define \hyperlink{cutil_8h_aa2df3d1046886a8076fa91b39caafaa9}{CUT\_\-CHECK\_\-ERROR}(errorMessage)
+\begin{DoxyCompactList}\small\item\em Check for CUDA error. \item\end{DoxyCompactList}\item 
+\#define \hyperlink{cutil_8h_a425f4f20221c53bd24b2b3644310b8b1}{CUT\_\-SAFE\_\-MALLOC}(mallocCall)
+\begin{DoxyCompactList}\small\item\em Check for malloc error. \item\end{DoxyCompactList}\item 
+\#define \hyperlink{cutil_8h_aac23fff9c16c36e7a280c56b2c9c8cae}{CUT\_\-CONDITION}(val)
+\begin{DoxyCompactList}\small\item\em Check if conditon is true (flexible assert). \item\end{DoxyCompactList}\item 
+\#define \hyperlink{cutil_8h_a80d77765adbf2b29be9c69cd317b7043}{CUT\_\-DEVICE\_\-INIT}(ARGC, ARGV)
+\item 
+\#define \hyperlink{cutil_8h_a615f949563de292b7b780cb7a200bf79}{CUDA\_\-CHECK\_\-CTX\_\-LOST}(errorMessage)
+\begin{DoxyCompactList}\small\item\em Check for CUDA context lost. \item\end{DoxyCompactList}\item 
+\#define \hyperlink{cutil_8h_a14227860450567f1ba225bd1e82696f5}{CU\_\-CHECK\_\-CTX\_\-LOST}(errorMessage)
+\begin{DoxyCompactList}\small\item\em Check for CUDA context lost. \item\end{DoxyCompactList}\item 
+\#define \hyperlink{cutil_8h_aec73eb9805cedbd0cf7f51e898d718a7}{CUT\_\-DEVICE\_\-INIT\_\-DRV}(cuDevice, ARGC, ARGV)
+\item 
+\#define \hyperlink{cutil_8h_aa49da457a48b97e08d44a7c3fd50b7f8}{CUT\_\-EXIT}(argc, argv)
+\end{DoxyCompactItemize}
+\subsection*{Enumerations}
+\begin{DoxyCompactItemize}
+\item 
+enum \hyperlink{cutil_8h_af15ae65c5b0b79d478ebb24b70cd4b6c}{CUTBoolean} \{ \hyperlink{cutil_8h_af15ae65c5b0b79d478ebb24b70cd4b6ca9732ec1c522e224f123de2af32c09b1c}{CUTFalse} =  0, 
+\hyperlink{cutil_8h_af15ae65c5b0b79d478ebb24b70cd4b6ca1ad75a9f32a17983d905f44542879995}{CUTTrue} =  1
+ \}
+\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+DLL\_\-MAPPING void CUTIL\_\-API \hyperlink{cutil_8h_a1dfb9dee715a102e9f8df9e2ca82c364}{cutFree} (void $\ast$ptr)
+\item 
+DLL\_\-MAPPING void CUTIL\_\-API \hyperlink{cutil_8h_a59bffd6e6781c179ad6aa57044d32d22}{cutCheckBankAccess} (unsigned int tidx, unsigned int tidy, unsigned int tidz, unsigned int bdimx, unsigned int bdimy, unsigned int bdimz, const char $\ast$file, const int line, const char $\ast$aname, const int index)
+\item 
+DLL\_\-MAPPING char $\ast$CUTIL\_\-API \hyperlink{cutil_8h_afd539beeec93fe459d2714be30e9d20a}{cutFindFilePath} (const char $\ast$filename, const char $\ast$executablePath)
+\item 
+DLL\_\-MAPPING \hyperlink{cutil_8h_af15ae65c5b0b79d478ebb24b70cd4b6c}{CUTBoolean} CUTIL\_\-API \hyperlink{cutil_8h_a1a1847ae3bc4d90754608920085bdb2d}{cutReadFilef} (const char $\ast$filename, float $\ast$$\ast$data, unsigned int $\ast$len, bool verbose=false)
+\item 
+DLL\_\-MAPPING \hyperlink{cutil_8h_af15ae65c5b0b79d478ebb24b70cd4b6c}{CUTBoolean} CUTIL\_\-API \hyperlink{cutil_8h_a72a75c7d379c1d648ef075ce61b77c03}{cutReadFiled} (const char $\ast$filename, double $\ast$$\ast$data, unsigned int $\ast$len, bool verbose=false)
+\item 
+DLL\_\-MAPPING \hyperlink{cutil_8h_af15ae65c5b0b79d478ebb24b70cd4b6c}{CUTBoolean} CUTIL\_\-API \hyperlink{cutil_8h_aa0453898dc22c1ad799fe6b73071ced5}{cutReadFilei} (const char $\ast$filename, int $\ast$$\ast$data, unsigned int $\ast$len, bool verbose=false)
+\item 
+DLL\_\-MAPPING \hyperlink{cutil_8h_af15ae65c5b0b79d478ebb24b70cd4b6c}{CUTBoolean} CUTIL\_\-API \hyperlink{cutil_8h_ad5ca731efd213aa8dc1a779d79090d1a}{cutReadFileui} (const char $\ast$filename, unsigned int $\ast$$\ast$data, unsigned int $\ast$len, bool verbose=false)
+\item 
+DLL\_\-MAPPING \hyperlink{cutil_8h_af15ae65c5b0b79d478ebb24b70cd4b6c}{CUTBoolean} CUTIL\_\-API \hyperlink{cutil_8h_ad7fe5a98d9a063070634791af8d12af5}{cutReadFileb} (const char $\ast$filename, char $\ast$$\ast$data, unsigned int $\ast$len, bool verbose=false)
+\item 
+DLL\_\-MAPPING \hyperlink{cutil_8h_af15ae65c5b0b79d478ebb24b70cd4b6c}{CUTBoolean} CUTIL\_\-API \hyperlink{cutil_8h_aef8a4611b68bd28bd09057b8bfbcb474}{cutReadFileub} (const char $\ast$filename, unsigned char $\ast$$\ast$data, unsigned int $\ast$len, bool verbose=false)
+\item 
+DLL\_\-MAPPING \hyperlink{cutil_8h_af15ae65c5b0b79d478ebb24b70cd4b6c}{CUTBoolean} CUTIL\_\-API \hyperlink{cutil_8h_a79034541bfab0ca763b4d2bf1d13f48f}{cutWriteFilef} (const char $\ast$filename, const float $\ast$data, unsigned int len, const float epsilon, bool verbose=false)
+\item 
+DLL\_\-MAPPING \hyperlink{cutil_8h_af15ae65c5b0b79d478ebb24b70cd4b6c}{CUTBoolean} CUTIL\_\-API \hyperlink{cutil_8h_a72d3624c082720504eb6f7d23dd46139}{cutWriteFiled} (const char $\ast$filename, const float $\ast$data, unsigned int len, const double epsilon, bool verbose=false)
+\item 
+DLL\_\-MAPPING \hyperlink{cutil_8h_af15ae65c5b0b79d478ebb24b70cd4b6c}{CUTBoolean} CUTIL\_\-API \hyperlink{cutil_8h_a93e643e567f56220899e82f54a97e253}{cutWriteFilei} (const char $\ast$filename, const int $\ast$data, unsigned int len, bool verbose=false)
+\item 
+DLL\_\-MAPPING \hyperlink{cutil_8h_af15ae65c5b0b79d478ebb24b70cd4b6c}{CUTBoolean} CUTIL\_\-API \hyperlink{cutil_8h_a6e39d6cdecaadd442fc1d48b88061607}{cutWriteFileui} (const char $\ast$filename, const unsigned int $\ast$data, unsigned int len, bool verbose=false)
+\item 
+DLL\_\-MAPPING \hyperlink{cutil_8h_af15ae65c5b0b79d478ebb24b70cd4b6c}{CUTBoolean} CUTIL\_\-API \hyperlink{cutil_8h_ab78b77b0664349ee080e844933b54756}{cutWriteFileb} (const char $\ast$filename, const char $\ast$data, unsigned int len, bool verbose=false)
+\item 
+DLL\_\-MAPPING \hyperlink{cutil_8h_af15ae65c5b0b79d478ebb24b70cd4b6c}{CUTBoolean} CUTIL\_\-API \hyperlink{cutil_8h_aae3fbc8faf0df8236721dec2c06c56b0}{cutWriteFileub} (const char $\ast$filename, const unsigned char $\ast$data, unsigned int len, bool verbose=false)
+\item 
+DLL\_\-MAPPING \hyperlink{cutil_8h_af15ae65c5b0b79d478ebb24b70cd4b6c}{CUTBoolean} CUTIL\_\-API \hyperlink{cutil_8h_aa71595165f09b3fa3368191200db5f89}{cutLoadPGMub} (const char $\ast$file, unsigned char $\ast$$\ast$data, unsigned int $\ast$w, unsigned int $\ast$h)
+\item 
+DLL\_\-MAPPING \hyperlink{cutil_8h_af15ae65c5b0b79d478ebb24b70cd4b6c}{CUTBoolean} CUTIL\_\-API \hyperlink{cutil_8h_aa73d2e4d6b6b2abf88d2de232060bd22}{cutLoadPPMub} (const char $\ast$file, unsigned char $\ast$$\ast$data, unsigned int $\ast$w, unsigned int $\ast$h)
+\item 
+DLL\_\-MAPPING \hyperlink{cutil_8h_af15ae65c5b0b79d478ebb24b70cd4b6c}{CUTBoolean} CUTIL\_\-API \hyperlink{cutil_8h_a210dd97c9486cafa68377979c24ebdad}{cutLoadPPM4ub} (const char $\ast$file, unsigned char $\ast$$\ast$data, unsigned int $\ast$w, unsigned int $\ast$h)
+\item 
+DLL\_\-MAPPING \hyperlink{cutil_8h_af15ae65c5b0b79d478ebb24b70cd4b6c}{CUTBoolean} CUTIL\_\-API \hyperlink{cutil_8h_abfdb9b2c6c98bb5c82daafd283ca784b}{cutLoadPGMi} (const char $\ast$file, unsigned int $\ast$$\ast$data, unsigned int $\ast$w, unsigned int $\ast$h)
+\item 
+DLL\_\-MAPPING \hyperlink{cutil_8h_af15ae65c5b0b79d478ebb24b70cd4b6c}{CUTBoolean} CUTIL\_\-API \hyperlink{cutil_8h_ae5c8894b9784514f33f50c418c265fac}{cutLoadPGMs} (const char $\ast$file, unsigned short $\ast$$\ast$data, unsigned int $\ast$w, unsigned int $\ast$h)
+\item 
+DLL\_\-MAPPING \hyperlink{cutil_8h_af15ae65c5b0b79d478ebb24b70cd4b6c}{CUTBoolean} CUTIL\_\-API \hyperlink{cutil_8h_a22e35c3a93690e62f4f48c9258ac4bc7}{cutLoadPGMf} (const char $\ast$file, float $\ast$$\ast$data, unsigned int $\ast$w, unsigned int $\ast$h)
+\item 
+DLL\_\-MAPPING \hyperlink{cutil_8h_af15ae65c5b0b79d478ebb24b70cd4b6c}{CUTBoolean} CUTIL\_\-API \hyperlink{cutil_8h_a5e4351cb29e8621ea368c7924d1dc675}{cutSavePGMub} (const char $\ast$file, unsigned char $\ast$data, unsigned int w, unsigned int h)
+\item 
+DLL\_\-MAPPING \hyperlink{cutil_8h_af15ae65c5b0b79d478ebb24b70cd4b6c}{CUTBoolean} CUTIL\_\-API \hyperlink{cutil_8h_ac92e4389b4ab3adcadd6c577448ce28a}{cutSavePPMub} (const char $\ast$file, unsigned char $\ast$data, unsigned int w, unsigned int h)
+\item 
+DLL\_\-MAPPING \hyperlink{cutil_8h_af15ae65c5b0b79d478ebb24b70cd4b6c}{CUTBoolean} CUTIL\_\-API \hyperlink{cutil_8h_ad33738206c896828c093a2995528c7c2}{cutSavePPM4ub} (const char $\ast$file, unsigned char $\ast$data, unsigned int w, unsigned int h)
+\item 
+DLL\_\-MAPPING \hyperlink{cutil_8h_af15ae65c5b0b79d478ebb24b70cd4b6c}{CUTBoolean} CUTIL\_\-API \hyperlink{cutil_8h_a40ce34aa959f2d5c9addde29e02768ac}{cutSavePGMi} (const char $\ast$file, unsigned int $\ast$data, unsigned int w, unsigned int h)
+\item 
+DLL\_\-MAPPING \hyperlink{cutil_8h_af15ae65c5b0b79d478ebb24b70cd4b6c}{CUTBoolean} CUTIL\_\-API \hyperlink{cutil_8h_abbcb6142c5e9f15b79f03246e119688e}{cutSavePGMs} (const char $\ast$file, unsigned short $\ast$data, unsigned int w, unsigned int h)
+\item 
+DLL\_\-MAPPING \hyperlink{cutil_8h_af15ae65c5b0b79d478ebb24b70cd4b6c}{CUTBoolean} CUTIL\_\-API \hyperlink{cutil_8h_aba0d02824c38b5ddf05e0d3aa65ac58d}{cutSavePGMf} (const char $\ast$file, float $\ast$data, unsigned int w, unsigned int h)
+\item 
+DLL\_\-MAPPING \hyperlink{cutil_8h_af15ae65c5b0b79d478ebb24b70cd4b6c}{CUTBoolean} CUTIL\_\-API \hyperlink{cutil_8h_a1ddec8d1a496dca5c1bfa3ba96171123}{cutCheckCmdLineFlag} (const int argc, const char $\ast$$\ast$argv, const char $\ast$flag\_\-name)
+\item 
+DLL\_\-MAPPING \hyperlink{cutil_8h_af15ae65c5b0b79d478ebb24b70cd4b6c}{CUTBoolean} CUTIL\_\-API \hyperlink{cutil_8h_ad3beb101068c4fab6a26e284382cd027}{cutGetCmdLineArgumenti} (const int argc, const char $\ast$$\ast$argv, const char $\ast$arg\_\-name, int $\ast$val)
+\item 
+DLL\_\-MAPPING \hyperlink{cutil_8h_af15ae65c5b0b79d478ebb24b70cd4b6c}{CUTBoolean} CUTIL\_\-API \hyperlink{cutil_8h_a2548c9cb4c2b44598943d8cdea343482}{cutGetCmdLineArgumentf} (const int argc, const char $\ast$$\ast$argv, const char $\ast$arg\_\-name, float $\ast$val)
+\item 
+DLL\_\-MAPPING \hyperlink{cutil_8h_af15ae65c5b0b79d478ebb24b70cd4b6c}{CUTBoolean} CUTIL\_\-API \hyperlink{cutil_8h_abb4bc0b9cfa81dde13163dfe50570bd0}{cutGetCmdLineArgumentstr} (const int argc, const char $\ast$$\ast$argv, const char $\ast$arg\_\-name, char $\ast$$\ast$val)
+\item 
+DLL\_\-MAPPING \hyperlink{cutil_8h_af15ae65c5b0b79d478ebb24b70cd4b6c}{CUTBoolean} CUTIL\_\-API \hyperlink{cutil_8h_a53d0857ffbed5bf78c1488fb209d5ed8}{cutGetCmdLineArgumentListstr} (const int argc, const char $\ast$$\ast$argv, const char $\ast$arg\_\-name, char $\ast$$\ast$val, unsigned int $\ast$len)
+\item 
+DLL\_\-MAPPING \hyperlink{cutil_8h_af15ae65c5b0b79d478ebb24b70cd4b6c}{CUTBoolean} CUTIL\_\-API \hyperlink{cutil_8h_ac04c35722018e277be19b836140911f5}{cutCheckCondition} (int val, const char $\ast$file, const int line)
+\item 
+DLL\_\-MAPPING \hyperlink{cutil_8h_af15ae65c5b0b79d478ebb24b70cd4b6c}{CUTBoolean} CUTIL\_\-API \hyperlink{cutil_8h_a38167c2856b4def08a6d1eb456f1a905}{cutComparef} (const float $\ast$reference, const float $\ast$data, const unsigned int len)
+\item 
+DLL\_\-MAPPING \hyperlink{cutil_8h_af15ae65c5b0b79d478ebb24b70cd4b6c}{CUTBoolean} CUTIL\_\-API \hyperlink{cutil_8h_a32715b7a19e5435b85af826f18f9d758}{cutComparei} (const int $\ast$reference, const int $\ast$data, const unsigned int len)
+\item 
+DLL\_\-MAPPING \hyperlink{cutil_8h_af15ae65c5b0b79d478ebb24b70cd4b6c}{CUTBoolean} CUTIL\_\-API \hyperlink{cutil_8h_a5b89dec4e252c8de5f4da12bf92e7540}{cutCompareuit} (const unsigned int $\ast$reference, const unsigned int $\ast$data, const unsigned int len, const float epsilon, const float threshold)
+\item 
+DLL\_\-MAPPING \hyperlink{cutil_8h_af15ae65c5b0b79d478ebb24b70cd4b6c}{CUTBoolean} CUTIL\_\-API \hyperlink{cutil_8h_a84fdc8e82d006c5eda2bc47efe70974f}{cutCompareub} (const unsigned char $\ast$reference, const unsigned char $\ast$data, const unsigned int len)
+\item 
+DLL\_\-MAPPING \hyperlink{cutil_8h_af15ae65c5b0b79d478ebb24b70cd4b6c}{CUTBoolean} CUTIL\_\-API \hyperlink{cutil_8h_ac8587332f9a40bf13fc6fb7e55f8e020}{cutCompareubt} (const unsigned char $\ast$reference, const unsigned char $\ast$data, const unsigned int len, const float epsilon, const float threshold)
+\item 
+DLL\_\-MAPPING \hyperlink{cutil_8h_af15ae65c5b0b79d478ebb24b70cd4b6c}{CUTBoolean} CUTIL\_\-API \hyperlink{cutil_8h_ad09dea3c437c533ad542c33b106baeb6}{cutCompareube} (const unsigned char $\ast$reference, const unsigned char $\ast$data, const unsigned int len, const float epsilon)
+\item 
+DLL\_\-MAPPING \hyperlink{cutil_8h_af15ae65c5b0b79d478ebb24b70cd4b6c}{CUTBoolean} CUTIL\_\-API \hyperlink{cutil_8h_a7c81b61a97fe6af4d920c082b4d2e08a}{cutComparefe} (const float $\ast$reference, const float $\ast$data, const unsigned int len, const float epsilon)
+\item 
+DLL\_\-MAPPING \hyperlink{cutil_8h_af15ae65c5b0b79d478ebb24b70cd4b6c}{CUTBoolean} CUTIL\_\-API \hyperlink{cutil_8h_a561ac1dce68a956bdf3db6090dbcb87e}{cutComparefet} (const float $\ast$reference, const float $\ast$data, const unsigned int len, const float epsilon, const float threshold)
+\item 
+DLL\_\-MAPPING \hyperlink{cutil_8h_af15ae65c5b0b79d478ebb24b70cd4b6c}{CUTBoolean} CUTIL\_\-API \hyperlink{cutil_8h_ae40db25b3629649c315e968db09a9a9a}{cutCompareL2fe} (const float $\ast$reference, const float $\ast$data, const unsigned int len, const float epsilon)
+\item 
+DLL\_\-MAPPING \hyperlink{cutil_8h_af15ae65c5b0b79d478ebb24b70cd4b6c}{CUTBoolean} CUTIL\_\-API \hyperlink{cutil_8h_afea2c0c5926ca62d8b590dfac42a15fa}{cutComparePPM} (const char $\ast$src\_\-file, const char $\ast$ref\_\-file, const float epsilon, const float threshold, bool verboseErrors=false)
+\item 
+DLL\_\-MAPPING \hyperlink{cutil_8h_af15ae65c5b0b79d478ebb24b70cd4b6c}{CUTBoolean} CUTIL\_\-API \hyperlink{cutil_8h_a3705c9df47d22d5fa3353886e5e2d82f}{cutCreateTimer} (unsigned int $\ast$name)
+\item 
+DLL\_\-MAPPING \hyperlink{cutil_8h_af15ae65c5b0b79d478ebb24b70cd4b6c}{CUTBoolean} CUTIL\_\-API \hyperlink{cutil_8h_a0a0d2368ec435cb6217b0a9f497393ec}{cutDeleteTimer} (unsigned int name)
+\item 
+DLL\_\-MAPPING \hyperlink{cutil_8h_af15ae65c5b0b79d478ebb24b70cd4b6c}{CUTBoolean} CUTIL\_\-API \hyperlink{cutil_8h_a2ee1f1bb632b2706baa78a6566ea9d2d}{cutStartTimer} (const unsigned int name)
+\item 
+DLL\_\-MAPPING \hyperlink{cutil_8h_af15ae65c5b0b79d478ebb24b70cd4b6c}{CUTBoolean} CUTIL\_\-API \hyperlink{cutil_8h_a6d01a26379150c575608997927e52db5}{cutStopTimer} (const unsigned int name)
+\item 
+DLL\_\-MAPPING \hyperlink{cutil_8h_af15ae65c5b0b79d478ebb24b70cd4b6c}{CUTBoolean} CUTIL\_\-API \hyperlink{cutil_8h_ad56cd1198608a2bc0d02d325de54caaf}{cutResetTimer} (const unsigned int name)
+\item 
+DLL\_\-MAPPING float CUTIL\_\-API \hyperlink{cutil_8h_af32b829e908fcfb3343f3e9590821d62}{cutGetTimerValue} (const unsigned int name)
+\item 
+DLL\_\-MAPPING float CUTIL\_\-API \hyperlink{cutil_8h_ae440a532259348182a827d1253f2e74f}{cutGetAverageTimerValue} (const unsigned int name)
+\end{DoxyCompactItemize}
+
+
+\subsection{Define Documentation}
+\hypertarget{cutil_8h_a14227860450567f1ba225bd1e82696f5}{
+\index{cutil.h@{cutil.h}!CU\_\-CHECK\_\-CTX\_\-LOST@{CU\_\-CHECK\_\-CTX\_\-LOST}}
+\index{CU\_\-CHECK\_\-CTX\_\-LOST@{CU\_\-CHECK\_\-CTX\_\-LOST}!cutil.h@{cutil.h}}
+\subsubsection[{CU\_\-CHECK\_\-CTX\_\-LOST}]{\setlength{\rightskip}{0pt plus 5cm}\#define CU\_\-CHECK\_\-CTX\_\-LOST(errorMessage)}}
+\label{cutil_8h_a14227860450567f1ba225bd1e82696f5}
+{\bfseries Value:}
+\begin{DoxyCode}
+{                                  \
+    cudaError_t err = cudaGetLastError();                                    \
+    if( CUDA_ERROR_INVALID_CONTEXT != err) {                                 \
+        fprintf(stderr, "Cuda error: %s in file '%s' in line %i : %s.\n",    \
+                errorMessage, __FILE__, __LINE__, cudaGetErrorString( err) );\
+        exit(EXIT_FAILURE);                                                  \
+    }                                                                        \
+    err = CUT_DEVICE_SYNCHRONIZE();                                           \
+    if( cudaSuccess != err) {                                                \
+        fprintf(stderr, "Cuda error: %s in file '%s' in line %i : %s.\n",    \
+                errorMessage, __FILE__, __LINE__, cudaGetErrorString( err) );\
+        exit(EXIT_FAILURE);                                                  \
+    } }
+\end{DoxyCode}
+
+
+Check for CUDA context lost. 
+
+\hypertarget{cutil_8h_af020685002673c5961838e74502b882b}{
+\index{cutil.h@{cutil.h}!CU\_\-SAFE\_\-CALL@{CU\_\-SAFE\_\-CALL}}
+\index{CU\_\-SAFE\_\-CALL@{CU\_\-SAFE\_\-CALL}!cutil.h@{cutil.h}}
+\subsubsection[{CU\_\-SAFE\_\-CALL}]{\setlength{\rightskip}{0pt plus 5cm}\#define CU\_\-SAFE\_\-CALL(call)~CU\_\-SAFE\_\-CALL\_\-NO\_\-SYNC(call);}}
+\label{cutil_8h_af020685002673c5961838e74502b882b}
+\hypertarget{cutil_8h_ab8093218c68bc2572946bbf8c8a2dc5e}{
+\index{cutil.h@{cutil.h}!CU\_\-SAFE\_\-CALL\_\-NO\_\-SYNC@{CU\_\-SAFE\_\-CALL\_\-NO\_\-SYNC}}
+\index{CU\_\-SAFE\_\-CALL\_\-NO\_\-SYNC@{CU\_\-SAFE\_\-CALL\_\-NO\_\-SYNC}!cutil.h@{cutil.h}}
+\subsubsection[{CU\_\-SAFE\_\-CALL\_\-NO\_\-SYNC}]{\setlength{\rightskip}{0pt plus 5cm}\#define CU\_\-SAFE\_\-CALL\_\-NO\_\-SYNC(call)}}
+\label{cutil_8h_ab8093218c68bc2572946bbf8c8a2dc5e}
+{\bfseries Value:}
+\begin{DoxyCode}
+{                                     \
+    CUresult err = call;                                                     \
+    if( CUDA_SUCCESS != err) {                                               \
+        fprintf(stderr, "Cuda driver error %x in file '%s' in line %i.\n",   \
+                err, __FILE__, __LINE__ );                                   \
+        exit(EXIT_FAILURE);                                                  \
+    } }
+\end{DoxyCode}
+\hypertarget{cutil_8h_ac5176f55dfc2df742b2e0057be499b57}{
+\index{cutil.h@{cutil.h}!CU\_\-SAFE\_\-CTX\_\-SYNC@{CU\_\-SAFE\_\-CTX\_\-SYNC}}
+\index{CU\_\-SAFE\_\-CTX\_\-SYNC@{CU\_\-SAFE\_\-CTX\_\-SYNC}!cutil.h@{cutil.h}}
+\subsubsection[{CU\_\-SAFE\_\-CTX\_\-SYNC}]{\setlength{\rightskip}{0pt plus 5cm}\#define CU\_\-SAFE\_\-CTX\_\-SYNC()}}
+\label{cutil_8h_ac5176f55dfc2df742b2e0057be499b57}
+{\bfseries Value:}
+\begin{DoxyCode}
+{                                              \
+    CUresult err = cuCtxSynchronize();                                       \
+    if( CUDA_SUCCESS != err) {                                               \
+        fprintf(stderr, "Cuda driver error %x in file '%s' in line %i.\n",   \
+                err, __FILE__, __LINE__ );                                   \
+        exit(EXIT_FAILURE);                                                  \
+    } }
+\end{DoxyCode}
+\hypertarget{cutil_8h_a615f949563de292b7b780cb7a200bf79}{
+\index{cutil.h@{cutil.h}!CUDA\_\-CHECK\_\-CTX\_\-LOST@{CUDA\_\-CHECK\_\-CTX\_\-LOST}}
+\index{CUDA\_\-CHECK\_\-CTX\_\-LOST@{CUDA\_\-CHECK\_\-CTX\_\-LOST}!cutil.h@{cutil.h}}
+\subsubsection[{CUDA\_\-CHECK\_\-CTX\_\-LOST}]{\setlength{\rightskip}{0pt plus 5cm}\#define CUDA\_\-CHECK\_\-CTX\_\-LOST(errorMessage)}}
+\label{cutil_8h_a615f949563de292b7b780cb7a200bf79}
+{\bfseries Value:}
+\begin{DoxyCode}
+{                                \
+    cudaError_t err = cudaGetLastError();                                    \
+    if( cudaSuccess != err) {                                                \
+        fprintf(stderr, "Cuda error: %s in file '%s' in line %i : %s.\n",    \
+                errorMessage, __FILE__, __LINE__, cudaGetErrorString( err) );\
+        exit(EXIT_FAILURE);                                                  \
+    }                                                                        \
+    err = CUT_DEVICE_SYNCHRONIZE();                                           \
+    if( cudaSuccess != err) {                                                \
+        fprintf(stderr, "Cuda error: %s in file '%s' in line %i : %s.\n",    \
+                errorMessage, __FILE__, __LINE__, cudaGetErrorString( err) );\
+        exit(EXIT_FAILURE);                                                  \
+    } }
+\end{DoxyCode}
+
+
+Check for CUDA context lost. 
+
+\hypertarget{cutil_8h_a0bc2332eff86e645eae632d071929dc5}{
+\index{cutil.h@{cutil.h}!CUDA\_\-SAFE\_\-CALL@{CUDA\_\-SAFE\_\-CALL}}
+\index{CUDA\_\-SAFE\_\-CALL@{CUDA\_\-SAFE\_\-CALL}!cutil.h@{cutil.h}}
+\subsubsection[{CUDA\_\-SAFE\_\-CALL}]{\setlength{\rightskip}{0pt plus 5cm}\#define CUDA\_\-SAFE\_\-CALL(call)~CUDA\_\-SAFE\_\-CALL\_\-NO\_\-SYNC(call);                                            $\backslash$}}
+\label{cutil_8h_a0bc2332eff86e645eae632d071929dc5}
+\hypertarget{cutil_8h_a024604466a0ecc1c84ca93c25332b3c2}{
+\index{cutil.h@{cutil.h}!CUDA\_\-SAFE\_\-CALL\_\-NO\_\-SYNC@{CUDA\_\-SAFE\_\-CALL\_\-NO\_\-SYNC}}
+\index{CUDA\_\-SAFE\_\-CALL\_\-NO\_\-SYNC@{CUDA\_\-SAFE\_\-CALL\_\-NO\_\-SYNC}!cutil.h@{cutil.h}}
+\subsubsection[{CUDA\_\-SAFE\_\-CALL\_\-NO\_\-SYNC}]{\setlength{\rightskip}{0pt plus 5cm}\#define CUDA\_\-SAFE\_\-CALL\_\-NO\_\-SYNC(call)}}
+\label{cutil_8h_a024604466a0ecc1c84ca93c25332b3c2}
+{\bfseries Value:}
+\begin{DoxyCode}
+{                                    \
+    cudaError err = call;                                                    \
+    if( cudaSuccess != err) {                                                \
+        fprintf(stderr, "Cuda error in file '%s' in line %i : %s.\n",        \
+                __FILE__, __LINE__, cudaGetErrorString( err) );              \
+        exit(EXIT_FAILURE);                                                  \
+    } }
+\end{DoxyCode}
+\hypertarget{cutil_8h_a5f49fae5fdd95c500f37a4db6a3ccc7a}{
+\index{cutil.h@{cutil.h}!CUDA\_\-SAFE\_\-THREAD\_\-SYNC@{CUDA\_\-SAFE\_\-THREAD\_\-SYNC}}
+\index{CUDA\_\-SAFE\_\-THREAD\_\-SYNC@{CUDA\_\-SAFE\_\-THREAD\_\-SYNC}!cutil.h@{cutil.h}}
+\subsubsection[{CUDA\_\-SAFE\_\-THREAD\_\-SYNC}]{\setlength{\rightskip}{0pt plus 5cm}\#define CUDA\_\-SAFE\_\-THREAD\_\-SYNC()}}
+\label{cutil_8h_a5f49fae5fdd95c500f37a4db6a3ccc7a}
+{\bfseries Value:}
+\begin{DoxyCode}
+{                                         \
+    cudaError err = CUT_DEVICE_SYNCHRONIZE();                                 \
+    if ( cudaSuccess != err) {                                               \
+        fprintf(stderr, "Cuda error in file '%s' in line %i : %s.\n",        \
+                __FILE__, __LINE__, cudaGetErrorString( err) );              \
+    } }
+\end{DoxyCode}
+\hypertarget{cutil_8h_a90f4f2f56d0e4350a7f98c1bfd9f2367}{
+\index{cutil.h@{cutil.h}!CUFFT\_\-SAFE\_\-CALL@{CUFFT\_\-SAFE\_\-CALL}}
+\index{CUFFT\_\-SAFE\_\-CALL@{CUFFT\_\-SAFE\_\-CALL}!cutil.h@{cutil.h}}
+\subsubsection[{CUFFT\_\-SAFE\_\-CALL}]{\setlength{\rightskip}{0pt plus 5cm}\#define CUFFT\_\-SAFE\_\-CALL(call)}}
+\label{cutil_8h_a90f4f2f56d0e4350a7f98c1bfd9f2367}
+{\bfseries Value:}
+\begin{DoxyCode}
+{                                           \
+    cufftResult err = call;                                                  \
+    if( CUFFT_SUCCESS != err) {                                              \
+        fprintf(stderr, "CUFFT error in file '%s' in line %i.\n",            \
+                __FILE__, __LINE__);                                         \
+        exit(EXIT_FAILURE);                                                  \
+    } }
+\end{DoxyCode}
+\hypertarget{cutil_8h_aeace20ec90b726fbce6a5be01520705c}{
+\index{cutil.h@{cutil.h}!CUT\_\-BANK\_\-CHECKER@{CUT\_\-BANK\_\-CHECKER}}
+\index{CUT\_\-BANK\_\-CHECKER@{CUT\_\-BANK\_\-CHECKER}!cutil.h@{cutil.h}}
+\subsubsection[{CUT\_\-BANK\_\-CHECKER}]{\setlength{\rightskip}{0pt plus 5cm}\#define CUT\_\-BANK\_\-CHECKER(array, \/  index)~array\mbox{[}index\mbox{]}}}
+\label{cutil_8h_aeace20ec90b726fbce6a5be01520705c}
+\hypertarget{cutil_8h_aa2df3d1046886a8076fa91b39caafaa9}{
+\index{cutil.h@{cutil.h}!CUT\_\-CHECK\_\-ERROR@{CUT\_\-CHECK\_\-ERROR}}
+\index{CUT\_\-CHECK\_\-ERROR@{CUT\_\-CHECK\_\-ERROR}!cutil.h@{cutil.h}}
+\subsubsection[{CUT\_\-CHECK\_\-ERROR}]{\setlength{\rightskip}{0pt plus 5cm}\#define CUT\_\-CHECK\_\-ERROR(errorMessage)}}
+\label{cutil_8h_aa2df3d1046886a8076fa91b39caafaa9}
+{\bfseries Value:}
+\begin{DoxyCode}
+{                                    \
+    cudaError_t err = cudaGetLastError();                                    \
+    if( cudaSuccess != err) {                                                \
+        fprintf(stderr, "Cuda error: %s in file '%s' in line %i : %s.\n",    \
+                errorMessage, __FILE__, __LINE__, cudaGetErrorString( err) );\
+        exit(EXIT_FAILURE);                                                  \
+    }                                                                        \
+    }
+\end{DoxyCode}
+
+
+Check for CUDA error. 
+
+\hypertarget{cutil_8h_aac23fff9c16c36e7a280c56b2c9c8cae}{
+\index{cutil.h@{cutil.h}!CUT\_\-CONDITION@{CUT\_\-CONDITION}}
+\index{CUT\_\-CONDITION@{CUT\_\-CONDITION}!cutil.h@{cutil.h}}
+\subsubsection[{CUT\_\-CONDITION}]{\setlength{\rightskip}{0pt plus 5cm}\#define CUT\_\-CONDITION(val)}}
+\label{cutil_8h_aac23fff9c16c36e7a280c56b2c9c8cae}
+{\bfseries Value:}
+\begin{DoxyCode}
+if( CUTFalse == cutCheckCondition( val, __FILE__, __LINE__)) {           \
+        exit(EXIT_FAILURE);                                                  \
+    }
+\end{DoxyCode}
+
+
+Check if conditon is true (flexible assert). 
+
+\hypertarget{cutil_8h_a80d77765adbf2b29be9c69cd317b7043}{
+\index{cutil.h@{cutil.h}!CUT\_\-DEVICE\_\-INIT@{CUT\_\-DEVICE\_\-INIT}}
+\index{CUT\_\-DEVICE\_\-INIT@{CUT\_\-DEVICE\_\-INIT}!cutil.h@{cutil.h}}
+\subsubsection[{CUT\_\-DEVICE\_\-INIT}]{\setlength{\rightskip}{0pt plus 5cm}\#define CUT\_\-DEVICE\_\-INIT(ARGC, \/  ARGV)}}
+\label{cutil_8h_a80d77765adbf2b29be9c69cd317b7043}
+{\bfseries Value:}
+\begin{DoxyCode}
+{                                      \
+    int deviceCount;                                                         \
+    CUDA_SAFE_CALL_NO_SYNC(cudaGetDeviceCount(&deviceCount));                \
+    if (deviceCount == 0) {                                                  \
+        fprintf(stderr, "cutil error: no devices supporting CUDA.\n");       \
+        exit(EXIT_FAILURE);                                                  \
+    }                                                                        \
+    int dev = 0;                                                             \
+    cutGetCmdLineArgumenti(ARGC, (const char **) ARGV, "device", &dev);      \
+        if (dev < 0) dev = 0;                                                    
+      \
+    if (dev > deviceCount-1) dev = deviceCount - 1;                          \
+    cudaDeviceProp deviceProp;                                               \
+    CUDA_SAFE_CALL_NO_SYNC(cudaGetDeviceProperties(&deviceProp, dev));       \
+    if (cutCheckCmdLineFlag(ARGC, (const char **) ARGV, "quiet") == CUTFalse) \
+        fprintf(stderr, "Using device %d: %s\n", dev, deviceProp.name);       \
+    CUDA_SAFE_CALL(cudaSetDevice(dev));                                      \
+}
+\end{DoxyCode}
+\hypertarget{cutil_8h_aec73eb9805cedbd0cf7f51e898d718a7}{
+\index{cutil.h@{cutil.h}!CUT\_\-DEVICE\_\-INIT\_\-DRV@{CUT\_\-DEVICE\_\-INIT\_\-DRV}}
+\index{CUT\_\-DEVICE\_\-INIT\_\-DRV@{CUT\_\-DEVICE\_\-INIT\_\-DRV}!cutil.h@{cutil.h}}
+\subsubsection[{CUT\_\-DEVICE\_\-INIT\_\-DRV}]{\setlength{\rightskip}{0pt plus 5cm}\#define CUT\_\-DEVICE\_\-INIT\_\-DRV(cuDevice, \/  ARGC, \/  ARGV)}}
+\label{cutil_8h_aec73eb9805cedbd0cf7f51e898d718a7}
+{\bfseries Value:}
+\begin{DoxyCode}
+{                        \
+    cuDevice = 0;                                                            \
+    int deviceCount = 0;                                                     \
+    CUresult err = cuInit(0);                                                \
+    if (CUDA_SUCCESS == err)                                                 \
+        CU_SAFE_CALL_NO_SYNC(cuDeviceGetCount(&deviceCount));                \
+    if (deviceCount == 0) {                                                  \
+        fprintf(stderr, "cutil error: no devices supporting CUDA\n");        \
+        exit(EXIT_FAILURE);                                                  \
+    }                                                                        \
+    int dev = 0;                                                             \
+    cutGetCmdLineArgumenti(ARGC, (const char **) ARGV, "device", &dev);      \
+        if (dev < 0) dev = 0;                                                    
+      \
+    if (dev > deviceCount-1) dev = deviceCount - 1;                          \
+    CU_SAFE_CALL_NO_SYNC(cuDeviceGet(&cuDevice, dev));                       \
+    char name[100];                                                          \
+    cuDeviceGetName(name, 100, cuDevice);                                    \
+    if (cutCheckCmdLineFlag(ARGC, (const char **) ARGV, "quiet") == CUTFalse) \
+        fprintf(stderr, "Using device %d: %s\n", dev, name);                  \
+}
+\end{DoxyCode}
+\hypertarget{cutil_8h_ab91fccf3a1ef878266549e0790038989}{
+\index{cutil.h@{cutil.h}!CUT\_\-DEVICE\_\-RESET@{CUT\_\-DEVICE\_\-RESET}}
+\index{CUT\_\-DEVICE\_\-RESET@{CUT\_\-DEVICE\_\-RESET}!cutil.h@{cutil.h}}
+\subsubsection[{CUT\_\-DEVICE\_\-RESET}]{\setlength{\rightskip}{0pt plus 5cm}\#define CUT\_\-DEVICE\_\-RESET()~cudaThreadExit();}}
+\label{cutil_8h_ab91fccf3a1ef878266549e0790038989}
+\hypertarget{cutil_8h_ae479ab7f929fd0376bb5d01d1455480a}{
+\index{cutil.h@{cutil.h}!CUT\_\-DEVICE\_\-SYNCHRONIZE@{CUT\_\-DEVICE\_\-SYNCHRONIZE}}
+\index{CUT\_\-DEVICE\_\-SYNCHRONIZE@{CUT\_\-DEVICE\_\-SYNCHRONIZE}!cutil.h@{cutil.h}}
+\subsubsection[{CUT\_\-DEVICE\_\-SYNCHRONIZE}]{\setlength{\rightskip}{0pt plus 5cm}\#define CUT\_\-DEVICE\_\-SYNCHRONIZE()~cudaThreadSynchronize();}}
+\label{cutil_8h_ae479ab7f929fd0376bb5d01d1455480a}
+Macros \hypertarget{cutil_8h_aa49da457a48b97e08d44a7c3fd50b7f8}{
+\index{cutil.h@{cutil.h}!CUT\_\-EXIT@{CUT\_\-EXIT}}
+\index{CUT\_\-EXIT@{CUT\_\-EXIT}!cutil.h@{cutil.h}}
+\subsubsection[{CUT\_\-EXIT}]{\setlength{\rightskip}{0pt plus 5cm}\#define CUT\_\-EXIT(argc, \/  argv)}}
+\label{cutil_8h_aa49da457a48b97e08d44a7c3fd50b7f8}
+{\bfseries Value:}
+\begin{DoxyCode}
+if (!cutCheckCmdLineFlag(argc, (const char**)argv, "noprompt")) {        \
+        printf("\nPress ENTER to exit...\n");                                \
+        fflush( stdout);                                                     \
+        fflush( stderr);                                                     \
+        getchar();                                                           \
+    }                                                                        \
+    exit(EXIT_SUCCESS);
+\end{DoxyCode}
+\hypertarget{cutil_8h_a3000a1b1c02dad1987b67dc70ad3baa9}{
+\index{cutil.h@{cutil.h}!CUT\_\-SAFE\_\-CALL@{CUT\_\-SAFE\_\-CALL}}
+\index{CUT\_\-SAFE\_\-CALL@{CUT\_\-SAFE\_\-CALL}!cutil.h@{cutil.h}}
+\subsubsection[{CUT\_\-SAFE\_\-CALL}]{\setlength{\rightskip}{0pt plus 5cm}\#define CUT\_\-SAFE\_\-CALL(call)}}
+\label{cutil_8h_a3000a1b1c02dad1987b67dc70ad3baa9}
+{\bfseries Value:}
+\begin{DoxyCode}
+if( CUTTrue != call) {                                                   \
+        fprintf(stderr, "Cut error in file '%s' in line %i.\n",              \
+                __FILE__, __LINE__);                                         \
+        exit(EXIT_FAILURE);                                                  \
+    }
+\end{DoxyCode}
+\hypertarget{cutil_8h_a425f4f20221c53bd24b2b3644310b8b1}{
+\index{cutil.h@{cutil.h}!CUT\_\-SAFE\_\-MALLOC@{CUT\_\-SAFE\_\-MALLOC}}
+\index{CUT\_\-SAFE\_\-MALLOC@{CUT\_\-SAFE\_\-MALLOC}!cutil.h@{cutil.h}}
+\subsubsection[{CUT\_\-SAFE\_\-MALLOC}]{\setlength{\rightskip}{0pt plus 5cm}\#define CUT\_\-SAFE\_\-MALLOC(mallocCall)}}
+\label{cutil_8h_a425f4f20221c53bd24b2b3644310b8b1}
+{\bfseries Value:}
+\begin{DoxyCode}
+{                                    \
+    if( !(mallocCall)) {                                                     \
+        fprintf(stderr, "Host malloc failure in file '%s' in line %i\n",     \
+                __FILE__, __LINE__);                                         \
+        exit(EXIT_FAILURE);                                                  \
+    } } while(0);
+\end{DoxyCode}
+
+
+Check for malloc error. 
+
+\hypertarget{cutil_8h_af609c3cbc0c12429a456efa504a507ac}{
+\index{cutil.h@{cutil.h}!CUTIL\_\-API@{CUTIL\_\-API}}
+\index{CUTIL\_\-API@{CUTIL\_\-API}!cutil.h@{cutil.h}}
+\subsubsection[{CUTIL\_\-API}]{\setlength{\rightskip}{0pt plus 5cm}\#define CUTIL\_\-API}}
+\label{cutil_8h_af609c3cbc0c12429a456efa504a507ac}
+\hypertarget{cutil_8h_aa64d2caeae8ec39e61ae17b5ba1e7997}{
+\index{cutil.h@{cutil.h}!DLL\_\-MAPPING@{DLL\_\-MAPPING}}
+\index{DLL\_\-MAPPING@{DLL\_\-MAPPING}!cutil.h@{cutil.h}}
+\subsubsection[{DLL\_\-MAPPING}]{\setlength{\rightskip}{0pt plus 5cm}\#define DLL\_\-MAPPING}}
+\label{cutil_8h_aa64d2caeae8ec39e61ae17b5ba1e7997}
+
+
+\subsection{Enumeration Type Documentation}
+\hypertarget{cutil_8h_af15ae65c5b0b79d478ebb24b70cd4b6c}{
+\index{cutil.h@{cutil.h}!CUTBoolean@{CUTBoolean}}
+\index{CUTBoolean@{CUTBoolean}!cutil.h@{cutil.h}}
+\subsubsection[{CUTBoolean}]{\setlength{\rightskip}{0pt plus 5cm}enum {\bf CUTBoolean}}}
+\label{cutil_8h_af15ae65c5b0b79d478ebb24b70cd4b6c}
+CUT bool type \begin{Desc}
+\item[Enumerator: ]\par
+\begin{description}
+\index{CUTFalse@{CUTFalse}!cutil.h@{cutil.h}}\index{cutil.h@{cutil.h}!CUTFalse@{CUTFalse}}\item[{\em 
+\hypertarget{cutil_8h_af15ae65c5b0b79d478ebb24b70cd4b6ca9732ec1c522e224f123de2af32c09b1c}{
+CUTFalse}
+\label{cutil_8h_af15ae65c5b0b79d478ebb24b70cd4b6ca9732ec1c522e224f123de2af32c09b1c}
+}]\index{CUTTrue@{CUTTrue}!cutil.h@{cutil.h}}\index{cutil.h@{cutil.h}!CUTTrue@{CUTTrue}}\item[{\em 
+\hypertarget{cutil_8h_af15ae65c5b0b79d478ebb24b70cd4b6ca1ad75a9f32a17983d905f44542879995}{
+CUTTrue}
+\label{cutil_8h_af15ae65c5b0b79d478ebb24b70cd4b6ca1ad75a9f32a17983d905f44542879995}
+}]\end{description}
+\end{Desc}
+
+
+
+\subsection{Function Documentation}
+\hypertarget{cutil_8h_a59bffd6e6781c179ad6aa57044d32d22}{
+\index{cutil.h@{cutil.h}!cutCheckBankAccess@{cutCheckBankAccess}}
+\index{cutCheckBankAccess@{cutCheckBankAccess}!cutil.h@{cutil.h}}
+\subsubsection[{cutCheckBankAccess}]{\setlength{\rightskip}{0pt plus 5cm}DLL\_\-MAPPING void CUTIL\_\-API cutCheckBankAccess (unsigned int {\em tidx}, \/  unsigned int {\em tidy}, \/  unsigned int {\em tidz}, \/  unsigned int {\em bdimx}, \/  unsigned int {\em bdimy}, \/  unsigned int {\em bdimz}, \/  const char $\ast$ {\em file}, \/  const int {\em line}, \/  const char $\ast$ {\em aname}, \/  const int {\em index})}}
+\label{cutil_8h_a59bffd6e6781c179ad6aa57044d32d22}
+Helper for bank conflict checking (should only be used with the CUT\_\-BANK\_\-CHECKER macro) 
+\begin{DoxyParams}{Parameters}
+\item[{\em tidx}]thread id in x dimension of block \item[{\em tidy}]thread id in y dimension of block \item[{\em tidz}]thread id in z dimension of block \item[{\em bdimx}]block size in x dimension \item[{\em bdimy}]block size in y dimension \item[{\em bdimz}]block size in z dimension \item[{\em file}]name of the source file where the access takes place \item[{\em line}]line in the source file where the access takes place \item[{\em aname}]name of the array which is accessed \item[{\em index}]index into the array \end{DoxyParams}
+\hypertarget{cutil_8h_a1ddec8d1a496dca5c1bfa3ba96171123}{
+\index{cutil.h@{cutil.h}!cutCheckCmdLineFlag@{cutCheckCmdLineFlag}}
+\index{cutCheckCmdLineFlag@{cutCheckCmdLineFlag}!cutil.h@{cutil.h}}
+\subsubsection[{cutCheckCmdLineFlag}]{\setlength{\rightskip}{0pt plus 5cm}DLL\_\-MAPPING {\bf CUTBoolean} CUTIL\_\-API cutCheckCmdLineFlag (const int {\em argc}, \/  const char $\ast$$\ast$ {\em argv}, \/  const char $\ast$ {\em flag\_\-name})}}
+\label{cutil_8h_a1ddec8d1a496dca5c1bfa3ba96171123}
+Check if command line argument {\itshape flag-\/name\/} is given \begin{DoxyReturn}{Returns}
+CUTTrue if command line argument {\itshape flag\_\-name\/} has been given, otherwise 0 
+\end{DoxyReturn}
+
+\begin{DoxyParams}{Parameters}
+\item[{\em argc}]argc as passed to main() \item[{\em argv}]argv as passed to main() \item[{\em flag\_\-name}]name of command line flag \end{DoxyParams}
+\hypertarget{cutil_8h_ac04c35722018e277be19b836140911f5}{
+\index{cutil.h@{cutil.h}!cutCheckCondition@{cutCheckCondition}}
+\index{cutCheckCondition@{cutCheckCondition}!cutil.h@{cutil.h}}
+\subsubsection[{cutCheckCondition}]{\setlength{\rightskip}{0pt plus 5cm}DLL\_\-MAPPING {\bf CUTBoolean} CUTIL\_\-API cutCheckCondition (int {\em val}, \/  const char $\ast$ {\em file}, \/  const int {\em line})}}
+\label{cutil_8h_ac04c35722018e277be19b836140911f5}
+Extended assert \begin{DoxyReturn}{Returns}
+CUTTrue if the condition {\itshape val\/} holds, otherwise CUTFalse 
+\end{DoxyReturn}
+
+\begin{DoxyParams}{Parameters}
+\item[{\em val}]condition to test \item[{\em file}]\_\-\_\-FILE\_\-\_\- macro \item[{\em line}]\_\-\_\-LINE\_\-\_\- macro \end{DoxyParams}
+\begin{DoxyNote}{Note}
+This function should be used via the CONDITION(val) macro 
+\end{DoxyNote}
+\hypertarget{cutil_8h_a38167c2856b4def08a6d1eb456f1a905}{
+\index{cutil.h@{cutil.h}!cutComparef@{cutComparef}}
+\index{cutComparef@{cutComparef}!cutil.h@{cutil.h}}
+\subsubsection[{cutComparef}]{\setlength{\rightskip}{0pt plus 5cm}DLL\_\-MAPPING {\bf CUTBoolean} CUTIL\_\-API cutComparef (const float $\ast$ {\em reference}, \/  const float $\ast$ {\em data}, \/  const unsigned int {\em len})}}
+\label{cutil_8h_a38167c2856b4def08a6d1eb456f1a905}
+Compare two float arrays \begin{DoxyReturn}{Returns}
+CUTTrue if {\itshape reference\/} and {\itshape data\/} are identical, otherwise CUTFalse 
+\end{DoxyReturn}
+
+\begin{DoxyParams}{Parameters}
+\item[{\em reference}]handle to the reference data / gold image \item[{\em data}]handle to the computed data \item[{\em len}]number of elements in reference and data \end{DoxyParams}
+\hypertarget{cutil_8h_a7c81b61a97fe6af4d920c082b4d2e08a}{
+\index{cutil.h@{cutil.h}!cutComparefe@{cutComparefe}}
+\index{cutComparefe@{cutComparefe}!cutil.h@{cutil.h}}
+\subsubsection[{cutComparefe}]{\setlength{\rightskip}{0pt plus 5cm}DLL\_\-MAPPING {\bf CUTBoolean} CUTIL\_\-API cutComparefe (const float $\ast$ {\em reference}, \/  const float $\ast$ {\em data}, \/  const unsigned int {\em len}, \/  const float {\em epsilon})}}
+\label{cutil_8h_a7c81b61a97fe6af4d920c082b4d2e08a}
+Compare two float arrays with an epsilon tolerance for equality \begin{DoxyReturn}{Returns}
+CUTTrue if {\itshape reference\/} and {\itshape data\/} are identical, otherwise CUTFalse 
+\end{DoxyReturn}
+
+\begin{DoxyParams}{Parameters}
+\item[{\em reference}]handle to the reference data / gold image \item[{\em data}]handle to the computed data \item[{\em len}]number of elements in reference and data \item[{\em epsilon}]epsilon to use for the comparison \end{DoxyParams}
+\hypertarget{cutil_8h_a561ac1dce68a956bdf3db6090dbcb87e}{
+\index{cutil.h@{cutil.h}!cutComparefet@{cutComparefet}}
+\index{cutComparefet@{cutComparefet}!cutil.h@{cutil.h}}
+\subsubsection[{cutComparefet}]{\setlength{\rightskip}{0pt plus 5cm}DLL\_\-MAPPING {\bf CUTBoolean} CUTIL\_\-API cutComparefet (const float $\ast$ {\em reference}, \/  const float $\ast$ {\em data}, \/  const unsigned int {\em len}, \/  const float {\em epsilon}, \/  const float {\em threshold})}}
+\label{cutil_8h_a561ac1dce68a956bdf3db6090dbcb87e}
+Compare two float arrays with an epsilon tolerance for equality and a threshold for \# pixel errors \begin{DoxyReturn}{Returns}
+CUTTrue if {\itshape reference\/} and {\itshape data\/} are identical, otherwise CUTFalse 
+\end{DoxyReturn}
+
+\begin{DoxyParams}{Parameters}
+\item[{\em reference}]handle to the reference data / gold image \item[{\em data}]handle to the computed data \item[{\em len}]number of elements in reference and data \item[{\em epsilon}]epsilon to use for the comparison \end{DoxyParams}
+\hypertarget{cutil_8h_a32715b7a19e5435b85af826f18f9d758}{
+\index{cutil.h@{cutil.h}!cutComparei@{cutComparei}}
+\index{cutComparei@{cutComparei}!cutil.h@{cutil.h}}
+\subsubsection[{cutComparei}]{\setlength{\rightskip}{0pt plus 5cm}DLL\_\-MAPPING {\bf CUTBoolean} CUTIL\_\-API cutComparei (const int $\ast$ {\em reference}, \/  const int $\ast$ {\em data}, \/  const unsigned int {\em len})}}
+\label{cutil_8h_a32715b7a19e5435b85af826f18f9d758}
+Compare two integer arrays \begin{DoxyReturn}{Returns}
+CUTTrue if {\itshape reference\/} and {\itshape data\/} are identical, otherwise CUTFalse 
+\end{DoxyReturn}
+
+\begin{DoxyParams}{Parameters}
+\item[{\em reference}]handle to the reference data / gold image \item[{\em data}]handle to the computed data \item[{\em len}]number of elements in reference and data \end{DoxyParams}
+\hypertarget{cutil_8h_ae40db25b3629649c315e968db09a9a9a}{
+\index{cutil.h@{cutil.h}!cutCompareL2fe@{cutCompareL2fe}}
+\index{cutCompareL2fe@{cutCompareL2fe}!cutil.h@{cutil.h}}
+\subsubsection[{cutCompareL2fe}]{\setlength{\rightskip}{0pt plus 5cm}DLL\_\-MAPPING {\bf CUTBoolean} CUTIL\_\-API cutCompareL2fe (const float $\ast$ {\em reference}, \/  const float $\ast$ {\em data}, \/  const unsigned int {\em len}, \/  const float {\em epsilon})}}
+\label{cutil_8h_ae40db25b3629649c315e968db09a9a9a}
+Compare two float arrays using L2-\/norm with an epsilon tolerance for equality \begin{DoxyReturn}{Returns}
+CUTTrue if {\itshape reference\/} and {\itshape data\/} are identical, otherwise CUTFalse 
+\end{DoxyReturn}
+
+\begin{DoxyParams}{Parameters}
+\item[{\em reference}]handle to the reference data / gold image \item[{\em data}]handle to the computed data \item[{\em len}]number of elements in reference and data \item[{\em epsilon}]epsilon to use for the comparison \end{DoxyParams}
+\hypertarget{cutil_8h_afea2c0c5926ca62d8b590dfac42a15fa}{
+\index{cutil.h@{cutil.h}!cutComparePPM@{cutComparePPM}}
+\index{cutComparePPM@{cutComparePPM}!cutil.h@{cutil.h}}
+\subsubsection[{cutComparePPM}]{\setlength{\rightskip}{0pt plus 5cm}DLL\_\-MAPPING {\bf CUTBoolean} CUTIL\_\-API cutComparePPM (const char $\ast$ {\em src\_\-file}, \/  const char $\ast$ {\em ref\_\-file}, \/  const float {\em epsilon}, \/  const float {\em threshold}, \/  bool {\em verboseErrors} = {\ttfamily false})}}
+\label{cutil_8h_afea2c0c5926ca62d8b590dfac42a15fa}
+Compare two PPM image files with an epsilon tolerance for equality \begin{DoxyReturn}{Returns}
+CUTTrue if {\itshape reference\/} and {\itshape data\/} are identical, otherwise CUTFalse 
+\end{DoxyReturn}
+
+\begin{DoxyParams}{Parameters}
+\item[{\em src\_\-file}]filename for the image to be compared \item[{\em data}]filename for the reference data / gold image \item[{\em epsilon}]epsilon to use for the comparison \item[{\em threshold}]threshold of pixels that can still mismatch to pass (i.e. 0.15f = 15\% must pass) \$param verboseErrors output details of image mismatch to std::err \end{DoxyParams}
+\hypertarget{cutil_8h_a84fdc8e82d006c5eda2bc47efe70974f}{
+\index{cutil.h@{cutil.h}!cutCompareub@{cutCompareub}}
+\index{cutCompareub@{cutCompareub}!cutil.h@{cutil.h}}
+\subsubsection[{cutCompareub}]{\setlength{\rightskip}{0pt plus 5cm}DLL\_\-MAPPING {\bf CUTBoolean} CUTIL\_\-API cutCompareub (const unsigned char $\ast$ {\em reference}, \/  const unsigned char $\ast$ {\em data}, \/  const unsigned int {\em len})}}
+\label{cutil_8h_a84fdc8e82d006c5eda2bc47efe70974f}
+Compare two unsigned char arrays \begin{DoxyReturn}{Returns}
+CUTTrue if {\itshape reference\/} and {\itshape data\/} are identical, otherwise CUTFalse 
+\end{DoxyReturn}
+
+\begin{DoxyParams}{Parameters}
+\item[{\em reference}]handle to the reference data / gold image \item[{\em data}]handle to the computed data \item[{\em len}]number of elements in reference and data \end{DoxyParams}
+\hypertarget{cutil_8h_ad09dea3c437c533ad542c33b106baeb6}{
+\index{cutil.h@{cutil.h}!cutCompareube@{cutCompareube}}
+\index{cutCompareube@{cutCompareube}!cutil.h@{cutil.h}}
+\subsubsection[{cutCompareube}]{\setlength{\rightskip}{0pt plus 5cm}DLL\_\-MAPPING {\bf CUTBoolean} CUTIL\_\-API cutCompareube (const unsigned char $\ast$ {\em reference}, \/  const unsigned char $\ast$ {\em data}, \/  const unsigned int {\em len}, \/  const float {\em epsilon})}}
+\label{cutil_8h_ad09dea3c437c533ad542c33b106baeb6}
+Compare two integer arrays witha n epsilon tolerance for equality \begin{DoxyReturn}{Returns}
+CUTTrue if {\itshape reference\/} and {\itshape data\/} are identical, otherwise CUTFalse 
+\end{DoxyReturn}
+
+\begin{DoxyParams}{Parameters}
+\item[{\em reference}]handle to the reference data / gold image \item[{\em data}]handle to the computed data \item[{\em len}]number of elements in reference and data \item[{\em epsilon}]epsilon to use for the comparison \end{DoxyParams}
+\hypertarget{cutil_8h_ac8587332f9a40bf13fc6fb7e55f8e020}{
+\index{cutil.h@{cutil.h}!cutCompareubt@{cutCompareubt}}
+\index{cutCompareubt@{cutCompareubt}!cutil.h@{cutil.h}}
+\subsubsection[{cutCompareubt}]{\setlength{\rightskip}{0pt plus 5cm}DLL\_\-MAPPING {\bf CUTBoolean} CUTIL\_\-API cutCompareubt (const unsigned char $\ast$ {\em reference}, \/  const unsigned char $\ast$ {\em data}, \/  const unsigned int {\em len}, \/  const float {\em epsilon}, \/  const float {\em threshold})}}
+\label{cutil_8h_ac8587332f9a40bf13fc6fb7e55f8e020}
+Compare two integers with a tolernance for \# of byte errors \begin{DoxyReturn}{Returns}
+CUTTrue if {\itshape reference\/} and {\itshape data\/} are identical, otherwise CUTFalse 
+\end{DoxyReturn}
+
+\begin{DoxyParams}{Parameters}
+\item[{\em reference}]handle to the reference data / gold image \item[{\em data}]handle to the computed data \item[{\em len}]number of elements in reference and data \item[{\em epsilon}]epsilon to use for the comparison \item[{\em threshold}]tolerance \% \# of comparison errors (0.15f = 15\%) \end{DoxyParams}
+\hypertarget{cutil_8h_a5b89dec4e252c8de5f4da12bf92e7540}{
+\index{cutil.h@{cutil.h}!cutCompareuit@{cutCompareuit}}
+\index{cutCompareuit@{cutCompareuit}!cutil.h@{cutil.h}}
+\subsubsection[{cutCompareuit}]{\setlength{\rightskip}{0pt plus 5cm}DLL\_\-MAPPING {\bf CUTBoolean} CUTIL\_\-API cutCompareuit (const unsigned int $\ast$ {\em reference}, \/  const unsigned int $\ast$ {\em data}, \/  const unsigned int {\em len}, \/  const float {\em epsilon}, \/  const float {\em threshold})}}
+\label{cutil_8h_a5b89dec4e252c8de5f4da12bf92e7540}
+Compare two unsigned integer arrays, with epsilon and threshold \begin{DoxyReturn}{Returns}
+CUTTrue if {\itshape reference\/} and {\itshape data\/} are identical, otherwise CUTFalse 
+\end{DoxyReturn}
+
+\begin{DoxyParams}{Parameters}
+\item[{\em reference}]handle to the reference data / gold image \item[{\em data}]handle to the computed data \item[{\em len}]number of elements in reference and data \item[{\em threshold}]tolerance \% \# of comparison errors (0.15f = 15\%) \end{DoxyParams}
+\hypertarget{cutil_8h_a3705c9df47d22d5fa3353886e5e2d82f}{
+\index{cutil.h@{cutil.h}!cutCreateTimer@{cutCreateTimer}}
+\index{cutCreateTimer@{cutCreateTimer}!cutil.h@{cutil.h}}
+\subsubsection[{cutCreateTimer}]{\setlength{\rightskip}{0pt plus 5cm}DLL\_\-MAPPING {\bf CUTBoolean} CUTIL\_\-API cutCreateTimer (unsigned int $\ast$ {\em name})}}
+\label{cutil_8h_a3705c9df47d22d5fa3353886e5e2d82f}
+Timer functionality Create a new timer \begin{DoxyReturn}{Returns}
+CUTTrue if a time has been created, otherwise false 
+\end{DoxyReturn}
+
+\begin{DoxyParams}{Parameters}
+\item[{\em name}]of the new timer, 0 if the creation failed \end{DoxyParams}
+\hypertarget{cutil_8h_a0a0d2368ec435cb6217b0a9f497393ec}{
+\index{cutil.h@{cutil.h}!cutDeleteTimer@{cutDeleteTimer}}
+\index{cutDeleteTimer@{cutDeleteTimer}!cutil.h@{cutil.h}}
+\subsubsection[{cutDeleteTimer}]{\setlength{\rightskip}{0pt plus 5cm}DLL\_\-MAPPING {\bf CUTBoolean} CUTIL\_\-API cutDeleteTimer (unsigned int {\em name})}}
+\label{cutil_8h_a0a0d2368ec435cb6217b0a9f497393ec}
+Delete a timer \begin{DoxyReturn}{Returns}
+CUTTrue if a time has been deleted, otherwise false 
+\end{DoxyReturn}
+
+\begin{DoxyParams}{Parameters}
+\item[{\em name}]of the timer to delete \end{DoxyParams}
+\hypertarget{cutil_8h_afd539beeec93fe459d2714be30e9d20a}{
+\index{cutil.h@{cutil.h}!cutFindFilePath@{cutFindFilePath}}
+\index{cutFindFilePath@{cutFindFilePath}!cutil.h@{cutil.h}}
+\subsubsection[{cutFindFilePath}]{\setlength{\rightskip}{0pt plus 5cm}DLL\_\-MAPPING char$\ast$ CUTIL\_\-API cutFindFilePath (const char $\ast$ {\em filename}, \/  const char $\ast$ {\em executablePath})}}
+\label{cutil_8h_afd539beeec93fe459d2714be30e9d20a}
+Find the path for a filename \begin{DoxyReturn}{Returns}
+the path if succeeded, otherwise 0 
+\end{DoxyReturn}
+
+\begin{DoxyParams}{Parameters}
+\item[{\em filename}]name of the file \item[{\em executablePath}]optional absolute path of the executable \end{DoxyParams}
+\hypertarget{cutil_8h_a1dfb9dee715a102e9f8df9e2ca82c364}{
+\index{cutil.h@{cutil.h}!cutFree@{cutFree}}
+\index{cutFree@{cutFree}!cutil.h@{cutil.h}}
+\subsubsection[{cutFree}]{\setlength{\rightskip}{0pt plus 5cm}DLL\_\-MAPPING void CUTIL\_\-API cutFree (void $\ast$ {\em ptr})}}
+\label{cutil_8h_a1dfb9dee715a102e9f8df9e2ca82c364}
+Deallocate memory allocated within Cutil 
+\begin{DoxyParams}{Parameters}
+\item[{\em pointer}]to memory \end{DoxyParams}
+\hypertarget{cutil_8h_ae440a532259348182a827d1253f2e74f}{
+\index{cutil.h@{cutil.h}!cutGetAverageTimerValue@{cutGetAverageTimerValue}}
+\index{cutGetAverageTimerValue@{cutGetAverageTimerValue}!cutil.h@{cutil.h}}
+\subsubsection[{cutGetAverageTimerValue}]{\setlength{\rightskip}{0pt plus 5cm}DLL\_\-MAPPING float CUTIL\_\-API cutGetAverageTimerValue (const unsigned int {\em name})}}
+\label{cutil_8h_ae440a532259348182a827d1253f2e74f}
+Return the average time in milliseconds for timer execution as the total time for the timer dividied by the number of completed (stopped) runs the timer has made. Excludes the current running time if the timer is currently running. 
+\begin{DoxyParams}{Parameters}
+\item[{\em name}]name of the timer to return the time of \end{DoxyParams}
+\hypertarget{cutil_8h_a2548c9cb4c2b44598943d8cdea343482}{
+\index{cutil.h@{cutil.h}!cutGetCmdLineArgumentf@{cutGetCmdLineArgumentf}}
+\index{cutGetCmdLineArgumentf@{cutGetCmdLineArgumentf}!cutil.h@{cutil.h}}
+\subsubsection[{cutGetCmdLineArgumentf}]{\setlength{\rightskip}{0pt plus 5cm}DLL\_\-MAPPING {\bf CUTBoolean} CUTIL\_\-API cutGetCmdLineArgumentf (const int {\em argc}, \/  const char $\ast$$\ast$ {\em argv}, \/  const char $\ast$ {\em arg\_\-name}, \/  float $\ast$ {\em val})}}
+\label{cutil_8h_a2548c9cb4c2b44598943d8cdea343482}
+Get the value of a command line argument of type float \begin{DoxyReturn}{Returns}
+CUTTrue if command line argument {\itshape arg\_\-name\/} has been given and is of the requested type, otherwise CUTFalse 
+\end{DoxyReturn}
+
+\begin{DoxyParams}{Parameters}
+\item[{\em argc}]argc as passed to main() \item[{\em argv}]argv as passed to main() \item[{\em arg\_\-name}]name of the command line argument \item[{\em val}]value of the command line argument \end{DoxyParams}
+\hypertarget{cutil_8h_ad3beb101068c4fab6a26e284382cd027}{
+\index{cutil.h@{cutil.h}!cutGetCmdLineArgumenti@{cutGetCmdLineArgumenti}}
+\index{cutGetCmdLineArgumenti@{cutGetCmdLineArgumenti}!cutil.h@{cutil.h}}
+\subsubsection[{cutGetCmdLineArgumenti}]{\setlength{\rightskip}{0pt plus 5cm}DLL\_\-MAPPING {\bf CUTBoolean} CUTIL\_\-API cutGetCmdLineArgumenti (const int {\em argc}, \/  const char $\ast$$\ast$ {\em argv}, \/  const char $\ast$ {\em arg\_\-name}, \/  int $\ast$ {\em val})}}
+\label{cutil_8h_ad3beb101068c4fab6a26e284382cd027}
+Get the value of a command line argument of type int \begin{DoxyReturn}{Returns}
+CUTTrue if command line argument {\itshape arg\_\-name\/} has been given and is of the requested type, otherwise CUTFalse 
+\end{DoxyReturn}
+
+\begin{DoxyParams}{Parameters}
+\item[{\em argc}]argc as passed to main() \item[{\em argv}]argv as passed to main() \item[{\em arg\_\-name}]name of the command line argument \item[{\em val}]value of the command line argument \end{DoxyParams}
+\hypertarget{cutil_8h_a53d0857ffbed5bf78c1488fb209d5ed8}{
+\index{cutil.h@{cutil.h}!cutGetCmdLineArgumentListstr@{cutGetCmdLineArgumentListstr}}
+\index{cutGetCmdLineArgumentListstr@{cutGetCmdLineArgumentListstr}!cutil.h@{cutil.h}}
+\subsubsection[{cutGetCmdLineArgumentListstr}]{\setlength{\rightskip}{0pt plus 5cm}DLL\_\-MAPPING {\bf CUTBoolean} CUTIL\_\-API cutGetCmdLineArgumentListstr (const int {\em argc}, \/  const char $\ast$$\ast$ {\em argv}, \/  const char $\ast$ {\em arg\_\-name}, \/  char $\ast$$\ast$ {\em val}, \/  unsigned int $\ast$ {\em len})}}
+\label{cutil_8h_a53d0857ffbed5bf78c1488fb209d5ed8}
+Get the value of a command line argument list those element are strings \begin{DoxyReturn}{Returns}
+CUTTrue if command line argument {\itshape arg\_\-name\/} has been given and is of the requested type, otherwise CUTFalse 
+\end{DoxyReturn}
+
+\begin{DoxyParams}{Parameters}
+\item[{\em argc}]argc as passed to main() \item[{\em argv}]argv as passed to main() \item[{\em arg\_\-name}]name of the command line argument \item[{\em val}]command line argument list \item[{\em len}]length of the list / number of elements \end{DoxyParams}
+\hypertarget{cutil_8h_abb4bc0b9cfa81dde13163dfe50570bd0}{
+\index{cutil.h@{cutil.h}!cutGetCmdLineArgumentstr@{cutGetCmdLineArgumentstr}}
+\index{cutGetCmdLineArgumentstr@{cutGetCmdLineArgumentstr}!cutil.h@{cutil.h}}
+\subsubsection[{cutGetCmdLineArgumentstr}]{\setlength{\rightskip}{0pt plus 5cm}DLL\_\-MAPPING {\bf CUTBoolean} CUTIL\_\-API cutGetCmdLineArgumentstr (const int {\em argc}, \/  const char $\ast$$\ast$ {\em argv}, \/  const char $\ast$ {\em arg\_\-name}, \/  char $\ast$$\ast$ {\em val})}}
+\label{cutil_8h_abb4bc0b9cfa81dde13163dfe50570bd0}
+Get the value of a command line argument of type string \begin{DoxyReturn}{Returns}
+CUTTrue if command line argument {\itshape arg\_\-name\/} has been given and is of the requested type, otherwise CUTFalse 
+\end{DoxyReturn}
+
+\begin{DoxyParams}{Parameters}
+\item[{\em argc}]argc as passed to main() \item[{\em argv}]argv as passed to main() \item[{\em arg\_\-name}]name of the command line argument \item[{\em val}]value of the command line argument \end{DoxyParams}
+\hypertarget{cutil_8h_af32b829e908fcfb3343f3e9590821d62}{
+\index{cutil.h@{cutil.h}!cutGetTimerValue@{cutGetTimerValue}}
+\index{cutGetTimerValue@{cutGetTimerValue}!cutil.h@{cutil.h}}
+\subsubsection[{cutGetTimerValue}]{\setlength{\rightskip}{0pt plus 5cm}DLL\_\-MAPPING float CUTIL\_\-API cutGetTimerValue (const unsigned int {\em name})}}
+\label{cutil_8h_af32b829e908fcfb3343f3e9590821d62}
+Returns total execution time in milliseconds for the timer over all runs since the last reset or timer creation. 
+\begin{DoxyParams}{Parameters}
+\item[{\em name}]name of the timer to return the time of \end{DoxyParams}
+\hypertarget{cutil_8h_a22e35c3a93690e62f4f48c9258ac4bc7}{
+\index{cutil.h@{cutil.h}!cutLoadPGMf@{cutLoadPGMf}}
+\index{cutLoadPGMf@{cutLoadPGMf}!cutil.h@{cutil.h}}
+\subsubsection[{cutLoadPGMf}]{\setlength{\rightskip}{0pt plus 5cm}DLL\_\-MAPPING {\bf CUTBoolean} CUTIL\_\-API cutLoadPGMf (const char $\ast$ {\em file}, \/  float $\ast$$\ast$ {\em data}, \/  unsigned int $\ast$ {\em w}, \/  unsigned int $\ast$ {\em h})}}
+\label{cutil_8h_a22e35c3a93690e62f4f48c9258ac4bc7}
+Load PGM image file (with float as data element type) 
+\begin{DoxyParams}{Parameters}
+\item[{\em file}]name of the image file \item[{\em data}]handle to the data read \item[{\em w}]width of the image \item[{\em h}]height of the image \end{DoxyParams}
+\begin{DoxyNote}{Note}
+If a NULL pointer is passed to this function and it is initialized withing Cutil then \hyperlink{cutil_8h_a1dfb9dee715a102e9f8df9e2ca82c364}{cutFree()} has to be used to deallocate the memory 
+\end{DoxyNote}
+\hypertarget{cutil_8h_abfdb9b2c6c98bb5c82daafd283ca784b}{
+\index{cutil.h@{cutil.h}!cutLoadPGMi@{cutLoadPGMi}}
+\index{cutLoadPGMi@{cutLoadPGMi}!cutil.h@{cutil.h}}
+\subsubsection[{cutLoadPGMi}]{\setlength{\rightskip}{0pt plus 5cm}DLL\_\-MAPPING {\bf CUTBoolean} CUTIL\_\-API cutLoadPGMi (const char $\ast$ {\em file}, \/  unsigned int $\ast$$\ast$ {\em data}, \/  unsigned int $\ast$ {\em w}, \/  unsigned int $\ast$ {\em h})}}
+\label{cutil_8h_abfdb9b2c6c98bb5c82daafd283ca784b}
+Load PGM image file (with unsigned int as data element type) \begin{DoxyReturn}{Returns}
+CUTTrue if reading the file succeeded, otherwise false 
+\end{DoxyReturn}
+
+\begin{DoxyParams}{Parameters}
+\item[{\em file}]name of the image file \item[{\em data}]handle to the data read \item[{\em w}]width of the image \item[{\em h}]height of the image \end{DoxyParams}
+\begin{DoxyNote}{Note}
+If a NULL pointer is passed to this function and it is initialized within Cutil then \hyperlink{cutil_8h_a1dfb9dee715a102e9f8df9e2ca82c364}{cutFree()} has to be used to deallocate the memory 
+\end{DoxyNote}
+\hypertarget{cutil_8h_ae5c8894b9784514f33f50c418c265fac}{
+\index{cutil.h@{cutil.h}!cutLoadPGMs@{cutLoadPGMs}}
+\index{cutLoadPGMs@{cutLoadPGMs}!cutil.h@{cutil.h}}
+\subsubsection[{cutLoadPGMs}]{\setlength{\rightskip}{0pt plus 5cm}DLL\_\-MAPPING {\bf CUTBoolean} CUTIL\_\-API cutLoadPGMs (const char $\ast$ {\em file}, \/  unsigned short $\ast$$\ast$ {\em data}, \/  unsigned int $\ast$ {\em w}, \/  unsigned int $\ast$ {\em h})}}
+\label{cutil_8h_ae5c8894b9784514f33f50c418c265fac}
+Load PGM image file (with unsigned short as data element type) \begin{DoxyReturn}{Returns}
+CUTTrue if reading the file succeeded, otherwise false 
+\end{DoxyReturn}
+
+\begin{DoxyParams}{Parameters}
+\item[{\em file}]name of the image file \item[{\em data}]handle to the data read \item[{\em w}]width of the image \item[{\em h}]height of the image \end{DoxyParams}
+\begin{DoxyNote}{Note}
+If a NULL pointer is passed to this function and it is initialized withing Cutil then \hyperlink{cutil_8h_a1dfb9dee715a102e9f8df9e2ca82c364}{cutFree()} has to be used to deallocate the memory 
+\end{DoxyNote}
+\hypertarget{cutil_8h_aa71595165f09b3fa3368191200db5f89}{
+\index{cutil.h@{cutil.h}!cutLoadPGMub@{cutLoadPGMub}}
+\index{cutLoadPGMub@{cutLoadPGMub}!cutil.h@{cutil.h}}
+\subsubsection[{cutLoadPGMub}]{\setlength{\rightskip}{0pt plus 5cm}DLL\_\-MAPPING {\bf CUTBoolean} CUTIL\_\-API cutLoadPGMub (const char $\ast$ {\em file}, \/  unsigned char $\ast$$\ast$ {\em data}, \/  unsigned int $\ast$ {\em w}, \/  unsigned int $\ast$ {\em h})}}
+\label{cutil_8h_aa71595165f09b3fa3368191200db5f89}
+Load PGM image file (with unsigned char as data element type) \begin{DoxyReturn}{Returns}
+CUTTrue if reading the file succeeded, otherwise false 
+\end{DoxyReturn}
+
+\begin{DoxyParams}{Parameters}
+\item[{\em file}]name of the image file \item[{\em data}]handle to the data read \item[{\em w}]width of the image \item[{\em h}]height of the image \end{DoxyParams}
+\begin{DoxyNote}{Note}
+If a NULL pointer is passed to this function and it is initialized within Cutil then \hyperlink{cutil_8h_a1dfb9dee715a102e9f8df9e2ca82c364}{cutFree()} has to be used to deallocate the memory 
+\end{DoxyNote}
+\hypertarget{cutil_8h_a210dd97c9486cafa68377979c24ebdad}{
+\index{cutil.h@{cutil.h}!cutLoadPPM4ub@{cutLoadPPM4ub}}
+\index{cutLoadPPM4ub@{cutLoadPPM4ub}!cutil.h@{cutil.h}}
+\subsubsection[{cutLoadPPM4ub}]{\setlength{\rightskip}{0pt plus 5cm}DLL\_\-MAPPING {\bf CUTBoolean} CUTIL\_\-API cutLoadPPM4ub (const char $\ast$ {\em file}, \/  unsigned char $\ast$$\ast$ {\em data}, \/  unsigned int $\ast$ {\em w}, \/  unsigned int $\ast$ {\em h})}}
+\label{cutil_8h_a210dd97c9486cafa68377979c24ebdad}
+Load PPM image file (with unsigned char as data element type), padding 4th component \begin{DoxyReturn}{Returns}
+CUTTrue if reading the file succeeded, otherwise false 
+\end{DoxyReturn}
+
+\begin{DoxyParams}{Parameters}
+\item[{\em file}]name of the image file \item[{\em data}]handle to the data read \item[{\em w}]width of the image \item[{\em h}]height of the image \end{DoxyParams}
+\hypertarget{cutil_8h_aa73d2e4d6b6b2abf88d2de232060bd22}{
+\index{cutil.h@{cutil.h}!cutLoadPPMub@{cutLoadPPMub}}
+\index{cutLoadPPMub@{cutLoadPPMub}!cutil.h@{cutil.h}}
+\subsubsection[{cutLoadPPMub}]{\setlength{\rightskip}{0pt plus 5cm}DLL\_\-MAPPING {\bf CUTBoolean} CUTIL\_\-API cutLoadPPMub (const char $\ast$ {\em file}, \/  unsigned char $\ast$$\ast$ {\em data}, \/  unsigned int $\ast$ {\em w}, \/  unsigned int $\ast$ {\em h})}}
+\label{cutil_8h_aa73d2e4d6b6b2abf88d2de232060bd22}
+Load PPM image file (with unsigned char as data element type) \begin{DoxyReturn}{Returns}
+CUTTrue if reading the file succeeded, otherwise false 
+\end{DoxyReturn}
+
+\begin{DoxyParams}{Parameters}
+\item[{\em file}]name of the image file \item[{\em data}]handle to the data read \item[{\em w}]width of the image \item[{\em h}]height of the image \end{DoxyParams}
+\hypertarget{cutil_8h_ad7fe5a98d9a063070634791af8d12af5}{
+\index{cutil.h@{cutil.h}!cutReadFileb@{cutReadFileb}}
+\index{cutReadFileb@{cutReadFileb}!cutil.h@{cutil.h}}
+\subsubsection[{cutReadFileb}]{\setlength{\rightskip}{0pt plus 5cm}DLL\_\-MAPPING {\bf CUTBoolean} CUTIL\_\-API cutReadFileb (const char $\ast$ {\em filename}, \/  char $\ast$$\ast$ {\em data}, \/  unsigned int $\ast$ {\em len}, \/  bool {\em verbose} = {\ttfamily false})}}
+\label{cutil_8h_ad7fe5a98d9a063070634791af8d12af5}
+Read file  containing char / byte data \begin{DoxyReturn}{Returns}
+CUTTrue if reading the file succeeded, otherwise false 
+\end{DoxyReturn}
+
+\begin{DoxyParams}{Parameters}
+\item[{\em filename}]name of the source file \item[{\em data}]uninitialized pointer, returned initialized and pointing to the data read \item[{\em len}]number of data elements in data, -\/1 on error \end{DoxyParams}
+\begin{DoxyNote}{Note}
+If a NULL pointer is passed to this function and it is initialized within Cutil then \hyperlink{cutil_8h_a1dfb9dee715a102e9f8df9e2ca82c364}{cutFree()} has to be used to deallocate the memory 
+\end{DoxyNote}
+\hypertarget{cutil_8h_a72a75c7d379c1d648ef075ce61b77c03}{
+\index{cutil.h@{cutil.h}!cutReadFiled@{cutReadFiled}}
+\index{cutReadFiled@{cutReadFiled}!cutil.h@{cutil.h}}
+\subsubsection[{cutReadFiled}]{\setlength{\rightskip}{0pt plus 5cm}DLL\_\-MAPPING {\bf CUTBoolean} CUTIL\_\-API cutReadFiled (const char $\ast$ {\em filename}, \/  double $\ast$$\ast$ {\em data}, \/  unsigned int $\ast$ {\em len}, \/  bool {\em verbose} = {\ttfamily false})}}
+\label{cutil_8h_a72a75c7d379c1d648ef075ce61b77c03}
+Read file  containing double precision floating point data \begin{DoxyReturn}{Returns}
+CUTTrue if reading the file succeeded, otherwise false 
+\end{DoxyReturn}
+
+\begin{DoxyParams}{Parameters}
+\item[{\em filename}]name of the source file \item[{\em data}]uninitialized pointer, returned initialized and pointing to the data read \item[{\em len}]number of data elements in data, -\/1 on error \end{DoxyParams}
+\begin{DoxyNote}{Note}
+If a NULL pointer is passed to this function and it is initialized within Cutil then \hyperlink{cutil_8h_a1dfb9dee715a102e9f8df9e2ca82c364}{cutFree()} has to be used to deallocate the memory 
+\end{DoxyNote}
+\hypertarget{cutil_8h_a1a1847ae3bc4d90754608920085bdb2d}{
+\index{cutil.h@{cutil.h}!cutReadFilef@{cutReadFilef}}
+\index{cutReadFilef@{cutReadFilef}!cutil.h@{cutil.h}}
+\subsubsection[{cutReadFilef}]{\setlength{\rightskip}{0pt plus 5cm}DLL\_\-MAPPING {\bf CUTBoolean} CUTIL\_\-API cutReadFilef (const char $\ast$ {\em filename}, \/  float $\ast$$\ast$ {\em data}, \/  unsigned int $\ast$ {\em len}, \/  bool {\em verbose} = {\ttfamily false})}}
+\label{cutil_8h_a1a1847ae3bc4d90754608920085bdb2d}
+Read file  containing single precision floating point data \begin{DoxyReturn}{Returns}
+CUTTrue if reading the file succeeded, otherwise false 
+\end{DoxyReturn}
+
+\begin{DoxyParams}{Parameters}
+\item[{\em filename}]name of the source file \item[{\em data}]uninitialized pointer, returned initialized and pointing to the data read \item[{\em len}]number of data elements in data, -\/1 on error \end{DoxyParams}
+\begin{DoxyNote}{Note}
+If a NULL pointer is passed to this function and it is initialized within Cutil then \hyperlink{cutil_8h_a1dfb9dee715a102e9f8df9e2ca82c364}{cutFree()} has to be used to deallocate the memory 
+\end{DoxyNote}
+\hypertarget{cutil_8h_aa0453898dc22c1ad799fe6b73071ced5}{
+\index{cutil.h@{cutil.h}!cutReadFilei@{cutReadFilei}}
+\index{cutReadFilei@{cutReadFilei}!cutil.h@{cutil.h}}
+\subsubsection[{cutReadFilei}]{\setlength{\rightskip}{0pt plus 5cm}DLL\_\-MAPPING {\bf CUTBoolean} CUTIL\_\-API cutReadFilei (const char $\ast$ {\em filename}, \/  int $\ast$$\ast$ {\em data}, \/  unsigned int $\ast$ {\em len}, \/  bool {\em verbose} = {\ttfamily false})}}
+\label{cutil_8h_aa0453898dc22c1ad799fe6b73071ced5}
+Read file  containing integer data \begin{DoxyReturn}{Returns}
+CUTTrue if reading the file succeeded, otherwise false 
+\end{DoxyReturn}
+
+\begin{DoxyParams}{Parameters}
+\item[{\em filename}]name of the source file \item[{\em data}]uninitialized pointer, returned initialized and pointing to the data read \item[{\em len}]number of data elements in data, -\/1 on error \end{DoxyParams}
+\begin{DoxyNote}{Note}
+If a NULL pointer is passed to this function and it is initialized within Cutil then \hyperlink{cutil_8h_a1dfb9dee715a102e9f8df9e2ca82c364}{cutFree()} has to be used to deallocate the memory 
+\end{DoxyNote}
+\hypertarget{cutil_8h_aef8a4611b68bd28bd09057b8bfbcb474}{
+\index{cutil.h@{cutil.h}!cutReadFileub@{cutReadFileub}}
+\index{cutReadFileub@{cutReadFileub}!cutil.h@{cutil.h}}
+\subsubsection[{cutReadFileub}]{\setlength{\rightskip}{0pt plus 5cm}DLL\_\-MAPPING {\bf CUTBoolean} CUTIL\_\-API cutReadFileub (const char $\ast$ {\em filename}, \/  unsigned char $\ast$$\ast$ {\em data}, \/  unsigned int $\ast$ {\em len}, \/  bool {\em verbose} = {\ttfamily false})}}
+\label{cutil_8h_aef8a4611b68bd28bd09057b8bfbcb474}
+Read file  containing unsigned char / byte data \begin{DoxyReturn}{Returns}
+CUTTrue if reading the file succeeded, otherwise false 
+\end{DoxyReturn}
+
+\begin{DoxyParams}{Parameters}
+\item[{\em filename}]name of the source file \item[{\em data}]uninitialized pointer, returned initialized and pointing to the data read \item[{\em len}]number of data elements in data, -\/1 on error \end{DoxyParams}
+\begin{DoxyNote}{Note}
+If a NULL pointer is passed to this function and it is initialized within Cutil then \hyperlink{cutil_8h_a1dfb9dee715a102e9f8df9e2ca82c364}{cutFree()} has to be used to deallocate the memory 
+\end{DoxyNote}
+\hypertarget{cutil_8h_ad5ca731efd213aa8dc1a779d79090d1a}{
+\index{cutil.h@{cutil.h}!cutReadFileui@{cutReadFileui}}
+\index{cutReadFileui@{cutReadFileui}!cutil.h@{cutil.h}}
+\subsubsection[{cutReadFileui}]{\setlength{\rightskip}{0pt plus 5cm}DLL\_\-MAPPING {\bf CUTBoolean} CUTIL\_\-API cutReadFileui (const char $\ast$ {\em filename}, \/  unsigned int $\ast$$\ast$ {\em data}, \/  unsigned int $\ast$ {\em len}, \/  bool {\em verbose} = {\ttfamily false})}}
+\label{cutil_8h_ad5ca731efd213aa8dc1a779d79090d1a}
+Read file  containing unsigned integer data \begin{DoxyReturn}{Returns}
+CUTTrue if reading the file succeeded, otherwise false 
+\end{DoxyReturn}
+
+\begin{DoxyParams}{Parameters}
+\item[{\em filename}]name of the source file \item[{\em data}]uninitialized pointer, returned initialized and pointing to the data read \item[{\em len}]number of data elements in data, -\/1 on error \end{DoxyParams}
+\begin{DoxyNote}{Note}
+If a NULL pointer is passed to this function and it is initialized within Cutil then \hyperlink{cutil_8h_a1dfb9dee715a102e9f8df9e2ca82c364}{cutFree()} has to be used to deallocate the memory 
+\end{DoxyNote}
+\hypertarget{cutil_8h_ad56cd1198608a2bc0d02d325de54caaf}{
+\index{cutil.h@{cutil.h}!cutResetTimer@{cutResetTimer}}
+\index{cutResetTimer@{cutResetTimer}!cutil.h@{cutil.h}}
+\subsubsection[{cutResetTimer}]{\setlength{\rightskip}{0pt plus 5cm}DLL\_\-MAPPING {\bf CUTBoolean} CUTIL\_\-API cutResetTimer (const unsigned int {\em name})}}
+\label{cutil_8h_ad56cd1198608a2bc0d02d325de54caaf}
+Resets the timer's counter. 
+\begin{DoxyParams}{Parameters}
+\item[{\em name}]name of the timer to reset. \end{DoxyParams}
+\hypertarget{cutil_8h_aba0d02824c38b5ddf05e0d3aa65ac58d}{
+\index{cutil.h@{cutil.h}!cutSavePGMf@{cutSavePGMf}}
+\index{cutSavePGMf@{cutSavePGMf}!cutil.h@{cutil.h}}
+\subsubsection[{cutSavePGMf}]{\setlength{\rightskip}{0pt plus 5cm}DLL\_\-MAPPING {\bf CUTBoolean} CUTIL\_\-API cutSavePGMf (const char $\ast$ {\em file}, \/  float $\ast$ {\em data}, \/  unsigned int {\em w}, \/  unsigned int {\em h})}}
+\label{cutil_8h_aba0d02824c38b5ddf05e0d3aa65ac58d}
+Save PGM image file (with float as data element type) 
+\begin{DoxyParams}{Parameters}
+\item[{\em file}]name of the image file \item[{\em data}]handle to the data read \item[{\em w}]width of the image \item[{\em h}]height of the image \end{DoxyParams}
+\hypertarget{cutil_8h_a40ce34aa959f2d5c9addde29e02768ac}{
+\index{cutil.h@{cutil.h}!cutSavePGMi@{cutSavePGMi}}
+\index{cutSavePGMi@{cutSavePGMi}!cutil.h@{cutil.h}}
+\subsubsection[{cutSavePGMi}]{\setlength{\rightskip}{0pt plus 5cm}DLL\_\-MAPPING {\bf CUTBoolean} CUTIL\_\-API cutSavePGMi (const char $\ast$ {\em file}, \/  unsigned int $\ast$ {\em data}, \/  unsigned int {\em w}, \/  unsigned int {\em h})}}
+\label{cutil_8h_a40ce34aa959f2d5c9addde29e02768ac}
+Save PGM image file (with unsigned int as data element type) 
+\begin{DoxyParams}{Parameters}
+\item[{\em file}]name of the image file \item[{\em data}]handle to the data read \item[{\em w}]width of the image \item[{\em h}]height of the image \end{DoxyParams}
+\hypertarget{cutil_8h_abbcb6142c5e9f15b79f03246e119688e}{
+\index{cutil.h@{cutil.h}!cutSavePGMs@{cutSavePGMs}}
+\index{cutSavePGMs@{cutSavePGMs}!cutil.h@{cutil.h}}
+\subsubsection[{cutSavePGMs}]{\setlength{\rightskip}{0pt plus 5cm}DLL\_\-MAPPING {\bf CUTBoolean} CUTIL\_\-API cutSavePGMs (const char $\ast$ {\em file}, \/  unsigned short $\ast$ {\em data}, \/  unsigned int {\em w}, \/  unsigned int {\em h})}}
+\label{cutil_8h_abbcb6142c5e9f15b79f03246e119688e}
+Save PGM image file (with unsigned short as data element type) 
+\begin{DoxyParams}{Parameters}
+\item[{\em file}]name of the image file \item[{\em data}]handle to the data read \item[{\em w}]width of the image \item[{\em h}]height of the image \end{DoxyParams}
+\hypertarget{cutil_8h_a5e4351cb29e8621ea368c7924d1dc675}{
+\index{cutil.h@{cutil.h}!cutSavePGMub@{cutSavePGMub}}
+\index{cutSavePGMub@{cutSavePGMub}!cutil.h@{cutil.h}}
+\subsubsection[{cutSavePGMub}]{\setlength{\rightskip}{0pt plus 5cm}DLL\_\-MAPPING {\bf CUTBoolean} CUTIL\_\-API cutSavePGMub (const char $\ast$ {\em file}, \/  unsigned char $\ast$ {\em data}, \/  unsigned int {\em w}, \/  unsigned int {\em h})}}
+\label{cutil_8h_a5e4351cb29e8621ea368c7924d1dc675}
+Save PGM image file (with unsigned char as data element type) 
+\begin{DoxyParams}{Parameters}
+\item[{\em file}]name of the image file \item[{\em data}]handle to the data read \item[{\em w}]width of the image \item[{\em h}]height of the image \end{DoxyParams}
+\hypertarget{cutil_8h_ad33738206c896828c093a2995528c7c2}{
+\index{cutil.h@{cutil.h}!cutSavePPM4ub@{cutSavePPM4ub}}
+\index{cutSavePPM4ub@{cutSavePPM4ub}!cutil.h@{cutil.h}}
+\subsubsection[{cutSavePPM4ub}]{\setlength{\rightskip}{0pt plus 5cm}DLL\_\-MAPPING {\bf CUTBoolean} CUTIL\_\-API cutSavePPM4ub (const char $\ast$ {\em file}, \/  unsigned char $\ast$ {\em data}, \/  unsigned int {\em w}, \/  unsigned int {\em h})}}
+\label{cutil_8h_ad33738206c896828c093a2995528c7c2}
+Save PPM image file (with unsigned char as data element type, padded to 4 bytes) 
+\begin{DoxyParams}{Parameters}
+\item[{\em file}]name of the image file \item[{\em data}]handle to the data read \item[{\em w}]width of the image \item[{\em h}]height of the image \end{DoxyParams}
+\hypertarget{cutil_8h_ac92e4389b4ab3adcadd6c577448ce28a}{
+\index{cutil.h@{cutil.h}!cutSavePPMub@{cutSavePPMub}}
+\index{cutSavePPMub@{cutSavePPMub}!cutil.h@{cutil.h}}
+\subsubsection[{cutSavePPMub}]{\setlength{\rightskip}{0pt plus 5cm}DLL\_\-MAPPING {\bf CUTBoolean} CUTIL\_\-API cutSavePPMub (const char $\ast$ {\em file}, \/  unsigned char $\ast$ {\em data}, \/  unsigned int {\em w}, \/  unsigned int {\em h})}}
+\label{cutil_8h_ac92e4389b4ab3adcadd6c577448ce28a}
+Save PPM image file (with unsigned char as data element type) 
+\begin{DoxyParams}{Parameters}
+\item[{\em file}]name of the image file \item[{\em data}]handle to the data read \item[{\em w}]width of the image \item[{\em h}]height of the image \end{DoxyParams}
+\hypertarget{cutil_8h_a2ee1f1bb632b2706baa78a6566ea9d2d}{
+\index{cutil.h@{cutil.h}!cutStartTimer@{cutStartTimer}}
+\index{cutStartTimer@{cutStartTimer}!cutil.h@{cutil.h}}
+\subsubsection[{cutStartTimer}]{\setlength{\rightskip}{0pt plus 5cm}DLL\_\-MAPPING {\bf CUTBoolean} CUTIL\_\-API cutStartTimer (const unsigned int {\em name})}}
+\label{cutil_8h_a2ee1f1bb632b2706baa78a6566ea9d2d}
+Start the time with name {\itshape name\/} 
+\begin{DoxyParams}{Parameters}
+\item[{\em name}]name of the timer to start \end{DoxyParams}
+\hypertarget{cutil_8h_a6d01a26379150c575608997927e52db5}{
+\index{cutil.h@{cutil.h}!cutStopTimer@{cutStopTimer}}
+\index{cutStopTimer@{cutStopTimer}!cutil.h@{cutil.h}}
+\subsubsection[{cutStopTimer}]{\setlength{\rightskip}{0pt plus 5cm}DLL\_\-MAPPING {\bf CUTBoolean} CUTIL\_\-API cutStopTimer (const unsigned int {\em name})}}
+\label{cutil_8h_a6d01a26379150c575608997927e52db5}
+Stop the time with name {\itshape name\/}. Does not reset. 
+\begin{DoxyParams}{Parameters}
+\item[{\em name}]name of the timer to stop \end{DoxyParams}
+\hypertarget{cutil_8h_ab78b77b0664349ee080e844933b54756}{
+\index{cutil.h@{cutil.h}!cutWriteFileb@{cutWriteFileb}}
+\index{cutWriteFileb@{cutWriteFileb}!cutil.h@{cutil.h}}
+\subsubsection[{cutWriteFileb}]{\setlength{\rightskip}{0pt plus 5cm}DLL\_\-MAPPING {\bf CUTBoolean} CUTIL\_\-API cutWriteFileb (const char $\ast$ {\em filename}, \/  const char $\ast$ {\em data}, \/  unsigned int {\em len}, \/  bool {\em verbose} = {\ttfamily false})}}
+\label{cutil_8h_ab78b77b0664349ee080e844933b54756}
+Write a data file  containing char / byte data \begin{DoxyReturn}{Returns}
+CUTTrue if writing the file succeeded, otherwise false 
+\end{DoxyReturn}
+
+\begin{DoxyParams}{Parameters}
+\item[{\em filename}]name of the file to write \item[{\em data}]pointer to data to write \item[{\em len}]number of data elements in data, -\/1 on error \end{DoxyParams}
+\hypertarget{cutil_8h_a72d3624c082720504eb6f7d23dd46139}{
+\index{cutil.h@{cutil.h}!cutWriteFiled@{cutWriteFiled}}
+\index{cutWriteFiled@{cutWriteFiled}!cutil.h@{cutil.h}}
+\subsubsection[{cutWriteFiled}]{\setlength{\rightskip}{0pt plus 5cm}DLL\_\-MAPPING {\bf CUTBoolean} CUTIL\_\-API cutWriteFiled (const char $\ast$ {\em filename}, \/  const float $\ast$ {\em data}, \/  unsigned int {\em len}, \/  const double {\em epsilon}, \/  bool {\em verbose} = {\ttfamily false})}}
+\label{cutil_8h_a72d3624c082720504eb6f7d23dd46139}
+Write a data file  containing double precision floating point data \begin{DoxyReturn}{Returns}
+CUTTrue if writing the file succeeded, otherwise false 
+\end{DoxyReturn}
+
+\begin{DoxyParams}{Parameters}
+\item[{\em filename}]name of the file to write \item[{\em data}]pointer to data to write \item[{\em len}]number of data elements in data, -\/1 on error \item[{\em epsilon}]epsilon for comparison \end{DoxyParams}
+\hypertarget{cutil_8h_a79034541bfab0ca763b4d2bf1d13f48f}{
+\index{cutil.h@{cutil.h}!cutWriteFilef@{cutWriteFilef}}
+\index{cutWriteFilef@{cutWriteFilef}!cutil.h@{cutil.h}}
+\subsubsection[{cutWriteFilef}]{\setlength{\rightskip}{0pt plus 5cm}DLL\_\-MAPPING {\bf CUTBoolean} CUTIL\_\-API cutWriteFilef (const char $\ast$ {\em filename}, \/  const float $\ast$ {\em data}, \/  unsigned int {\em len}, \/  const float {\em epsilon}, \/  bool {\em verbose} = {\ttfamily false})}}
+\label{cutil_8h_a79034541bfab0ca763b4d2bf1d13f48f}
+Write a data file  containing single precision floating point data \begin{DoxyReturn}{Returns}
+CUTTrue if writing the file succeeded, otherwise false 
+\end{DoxyReturn}
+
+\begin{DoxyParams}{Parameters}
+\item[{\em filename}]name of the file to write \item[{\em data}]pointer to data to write \item[{\em len}]number of data elements in data, -\/1 on error \item[{\em epsilon}]epsilon for comparison \end{DoxyParams}
+\hypertarget{cutil_8h_a93e643e567f56220899e82f54a97e253}{
+\index{cutil.h@{cutil.h}!cutWriteFilei@{cutWriteFilei}}
+\index{cutWriteFilei@{cutWriteFilei}!cutil.h@{cutil.h}}
+\subsubsection[{cutWriteFilei}]{\setlength{\rightskip}{0pt plus 5cm}DLL\_\-MAPPING {\bf CUTBoolean} CUTIL\_\-API cutWriteFilei (const char $\ast$ {\em filename}, \/  const int $\ast$ {\em data}, \/  unsigned int {\em len}, \/  bool {\em verbose} = {\ttfamily false})}}
+\label{cutil_8h_a93e643e567f56220899e82f54a97e253}
+Write a data file  containing integer data \begin{DoxyReturn}{Returns}
+CUTTrue if writing the file succeeded, otherwise false 
+\end{DoxyReturn}
+
+\begin{DoxyParams}{Parameters}
+\item[{\em filename}]name of the file to write \item[{\em data}]pointer to data to write \item[{\em len}]number of data elements in data, -\/1 on error \end{DoxyParams}
+\hypertarget{cutil_8h_aae3fbc8faf0df8236721dec2c06c56b0}{
+\index{cutil.h@{cutil.h}!cutWriteFileub@{cutWriteFileub}}
+\index{cutWriteFileub@{cutWriteFileub}!cutil.h@{cutil.h}}
+\subsubsection[{cutWriteFileub}]{\setlength{\rightskip}{0pt plus 5cm}DLL\_\-MAPPING {\bf CUTBoolean} CUTIL\_\-API cutWriteFileub (const char $\ast$ {\em filename}, \/  const unsigned char $\ast$ {\em data}, \/  unsigned int {\em len}, \/  bool {\em verbose} = {\ttfamily false})}}
+\label{cutil_8h_aae3fbc8faf0df8236721dec2c06c56b0}
+Write a data file  containing unsigned char / byte data \begin{DoxyReturn}{Returns}
+CUTTrue if writing the file succeeded, otherwise false 
+\end{DoxyReturn}
+
+\begin{DoxyParams}{Parameters}
+\item[{\em filename}]name of the file to write \item[{\em data}]pointer to data to write \item[{\em len}]number of data elements in data, -\/1 on error \end{DoxyParams}
+\hypertarget{cutil_8h_a6e39d6cdecaadd442fc1d48b88061607}{
+\index{cutil.h@{cutil.h}!cutWriteFileui@{cutWriteFileui}}
+\index{cutWriteFileui@{cutWriteFileui}!cutil.h@{cutil.h}}
+\subsubsection[{cutWriteFileui}]{\setlength{\rightskip}{0pt plus 5cm}DLL\_\-MAPPING {\bf CUTBoolean} CUTIL\_\-API cutWriteFileui (const char $\ast$ {\em filename}, \/  const unsigned int $\ast$ {\em data}, \/  unsigned int {\em len}, \/  bool {\em verbose} = {\ttfamily false})}}
+\label{cutil_8h_a6e39d6cdecaadd442fc1d48b88061607}
+Write a data file  containing unsigned integer data \begin{DoxyReturn}{Returns}
+CUTTrue if writing the file succeeded, otherwise false 
+\end{DoxyReturn}
+
+\begin{DoxyParams}{Parameters}
+\item[{\em filename}]name of the file to write \item[{\em data}]pointer to data to write \item[{\em len}]number of data elements in data, -\/1 on error \end{DoxyParams}
